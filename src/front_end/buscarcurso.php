@@ -23,8 +23,8 @@
         
         Cercar curs mitjançant tipus, modalitat i any del curs:
         <form action="../back_end/selector.php" method="POST">
-            Tipus de curs: <input type=radio name="tipus_curs" value="M"> Monitor <input type=radio name="tipus_curs" value="D"> Director <input type=radio name="tipus_curs" value="D"> Director<br>
-            Modalitat: <input type=radio name="modalitat_curs" value="mati"> Matí <input type=radio name="modalitat_curs" value="tarda"> Tarda <input type=radio name="modalitat_curs" value="finde"> Cap de setmana <input type=radio name="modalitat_curs" value="intensiu"> Intensiu<br>
+            Tipus de curs: <input type=radio name="tipus_curs" value="M" required> Monitor <input type=radio name="tipus_curs" value="D" required> Director <input type=radio name="tipus_curs" value="ANY" required> Qualsevol<br>
+            Modalitat: <input type=radio name="modalitat_curs" value="mati" required> Matí <input type=radio name="modalitat_curs" value="tarda" required> Tarda <input type=radio name="modalitat_curs" value="finde" required> Cap de setmana <input type=radio name="modalitat_curs" value="intensiu" required> Intensiu <input type=radio name="modalitat_curs" value="ANY" required> Qualsevol<br>
             Any del curs (deixar en blanc per qualsevol any): <input type=number min="2017" max="3000" name="any_curs"><br>
             <input type="submit" value="CERCA">
         </form>
