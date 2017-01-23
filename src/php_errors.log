@@ -1,0 +1,10 @@
+[17-Jan-2017 15:56:14 UTC] PHP Warning:  require_once(bbdd_lib.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/src/front_end/index.php on line 9
+[17-Jan-2017 15:56:14 UTC] PHP Stack trace:
+[17-Jan-2017 15:56:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/index.php:0
+[17-Jan-2017 15:56:14 UTC] PHP Fatal error:  require_once(): Failed opening required 'bbdd_lib.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/src/front_end/index.php on line 9
+[17-Jan-2017 15:56:14 UTC] PHP Stack trace:
+[17-Jan-2017 15:56:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/index.php:0
+[17-Jan-2017 15:56:44 UTC] PHP Fatal error:  Call to undefined function isempty() in /home/ubuntu/workspace/src/front_end/index.php on line 10
+[17-Jan-2017 15:56:44 UTC] PHP Stack trace:
+[17-Jan-2017 15:56:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/index.php:0
+[23-Jan-2017 22:44:26 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/src/front_end/index.php on line 17
