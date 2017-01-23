@@ -122,32 +122,6 @@ function createCode() // FUNCIÓN QUE DEVUELVE UN CÓDIGO DE CURSO NUEVO
     }
 }
 
-function getCodeByTMA($tipo, $mod, $ano) // FUNCIÓN QUE DEVUELVE EL CÓDIGO DE UN CURSO SEGÚN SU TIPO, MODALIDAD Y AÑO, 0 si error (PRIMARY KEY ALTERNATIVA COMBINADA, solo hay un curso de un tipo y de una modalidad por año CREO, PREGUNTA)
-{
-    $con = conectar("edm");
-    $query = "SELECT id_curso FROM Curso WHERE tipo_curso = $tipo AND modalidad = '$mod' AND ano = $ano";
-    if($res = mysqli_query($con, $query))
-    {
-        if(mysqli_num_rows($res))
-        {
-            $row = mysqli_fetch_assoc($res);
-            $code = $row["id_curso"];
-            desconectar($con);
-            return $code;
-        }
-        else
-        {
-            desconectar($con);
-            return 0; // el curso no existe
-        }
-    }
-    else
-    {
-        desconectar($con);
-        errorConsulta();
-    }
-}
-
 //BOOLEANAS
 function cursoExists($code) // FUNCIÓN QUE DEVUELVE 1 SI EL CURSO EXISTE Y 0 SI NO
 {
