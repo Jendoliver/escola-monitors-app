@@ -22,12 +22,6 @@ function desconectar($con) // Otra que tal
     mysqli_close($con);
 }
 
-function printBackButton()
-{
-    $url = htmlspecialchars($_SERVER['HTTP_REFERER']); 
-    echo "<input type='submit' formaction='$url' value='Volver'>"; 
-}
-
 //AUTENTICACIÓN
 function checkadmin($user, $pass) // Función que comprueba que el login es correcto
 {

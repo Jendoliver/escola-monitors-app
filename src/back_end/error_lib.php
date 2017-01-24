@@ -4,6 +4,8 @@
 * error_lib.php: LIBRERÍA DE ERRORES DE LA APLICACIÓN
 *
 */
+require_once "print_lib.php";
+
 function noResults()
 {
     echo "No se han encontrado resultados";
@@ -41,7 +43,8 @@ function errorLogin()
 
 function errorNotLogged()
 {
-    echo "NO HAS INICIADO SESIÓN --- ACCESO DENEGADO";
+    echo "No has iniciat sessio --- ACCES DENEGAT";
+    echo "<input type='submit' value='Iniciar Sessió' formaction='index.php'>"
 }
 
 function errorSelector()
