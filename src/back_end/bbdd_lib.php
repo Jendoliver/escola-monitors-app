@@ -164,7 +164,18 @@ function alumnoInsertado() // PROCEDIMIENTO QUE CONFIRMA QUE UN ALUMNO HA SIDO I
 //SELECTS
 function showCursoByCode($code) // PROCEDIMIENTO QUE MUESTRA UN SOLO CURSO CON id_curso = $code Y OPCIONES DE GESTIÓN (mostrar alumnos del curso, modificar curso //NUNCA EL CÓDIGO//)
 {
-    
+    $con = conectar("edm");
+    if($res = mysqli_query($con, "SELECT * FROM Curso WHERE id_curso = $code"))
+    {
+        createTable($con, $res);
+    }
+    else
+    {
+        errorConsulta();
+        desconectar($con);
+        printBackButton();
+        printHomeButton();
+    }
 }
 
 function showCursos($tipo, $mod, $ano) // PROCEDIMIENTO QUE MUESTRA UNO O VARIOS CURSOS SEGÚN EL TIPO, MODALIDAD Y AÑO ESPECIFICADO
@@ -187,15 +198,32 @@ function showAlumnoByEmail($email)
     }
 }
 
-function createTable($data, $border)
+function createTable($con, $res) // $con = conexion bbdd, $res = resultado query
 {
-    echo "<table border='$border'px><th>";
-    foreach($data as $key => $value)
+    $row = mysqli_fetch_assoc($res);
+    echo "<table border=2px><th>";
+    foreach($row as $key => $value) // header tabla
     {
         echo "<td>$key</td>";
     }
-    echo "</th>";
-    foreach
+    echo "<td>Modificar</td></th>"; // columna de botón modificar
+
+    do // llenar tabla con el contenido de la query
+    {
+        echo "<tr>"; // principio de fila
+        foreach($row as $key => $value) // llenamos una fila
+        {
+            if($key == "id_curso" or $key == "dni") // pillamos la primary para lanzar el modify sobre eso
+            {    
+                $type = $key;
+                session_start();
+                $_SESSION["primary"] = $value;
+            }
+            echo "<td>$value</td>";
+        }
+        echo "<input type='submit' name='$type' formaction='../front_end/modificardatos.php' value='MODIFICAR'>"; // botón de modificar
+    } while ($row = mysqli_fetch_assoc($res));
+    echo "</table>";
 }
 
 ?>

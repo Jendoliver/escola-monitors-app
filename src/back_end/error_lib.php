@@ -44,10 +44,15 @@ function errorLogin()
 function errorNotLogged()
 {
     echo "No has iniciat sessio --- ACCES DENEGAT";
-    echo "<input type='submit' value='Iniciar Sessió' formaction='index.php'>"
+    echo "<input type='submit' value='Iniciar Sessió' formaction='index.php'>";
 }
 
 function errorSelector()
 {
     echo "ERROR EN SELECTOR.PHP";
+}
+
+function errorModificar()
+{
+    echo "ERROR EN LA LLAMADA A MODIFICARDATOS.PHP";
 }

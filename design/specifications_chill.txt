@@ -1,0 +1,9 @@
+
+Hola , tal y como comentamos necesitamos una BBDD para la Escola. Te indico los parámetros y campos que necesitamos (entre paréntesis los campos del desplegable):
+
+Formularios: 
+- Registro de Entrada de Cursos: NOMBRE, TIPO DE CURSO (Monitores, Directores, Premonitor, Otros), MODALIDAD (Matins, Tardes, Caps de Setmana, Intensius), FECHA INICIO, FECHA FINAL, HORARIO, LUGAR, PRECIO CURSO
+- Registro de Entrada de Alumnos: INSCRIPCION DE CURSO (SI, NO), CURSO INSCRITO, NOMBRE, APELLIDO 1, APELLIDO 2, FECHA NACIMIENTO, DNI, TELÉFONO, MAIL, CALIFICACIÓN TEORÍA (Apte, No Apte, Pendiente, Sin calificar), CALIFICACIÓN PRÁCTICAS (Apte, No Apte, Pendiente, Sin calificar), OBSERVACIONES, PRECIO CURSO, IMPORTE PAGADO, IMPORTE PENDIENTE DE COBRO, MEMORIA ENTREGADA (Si, NO), CONVOCATORIA, Nº TITULO
+Informes:
+- Alumnos de un determinado curso
+- Alumnos con Importe pendiente de pago (superior a 0)
