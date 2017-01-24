@@ -21,7 +21,7 @@ else if(isset($_POST["tipus_curs"])) // VENIMOS DE buscarcurso.php CON OPCIONES 
 
 else if(isset($_POST["data"])) // VENIMOS DE gestioalumnes.php pa buscar un alumno en kokreta
 {
-    extract($_POST); // Toca checkiar el tipo de dato
+    extract($_POST); //heckiar el tipo de dato
     switch($tipo)
     {
         case "nom": showAlumnoByNom($data); break; // hay que actualizar esto a nombre, ape1, ape2
