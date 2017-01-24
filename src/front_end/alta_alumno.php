@@ -11,7 +11,7 @@
         errorNotLogged();
     else
     { ?>
-    <header><img src=""></img></header>
+    <header><img src="img/escolamonitorslogo.png"></img></header>
     <h1>Alta alumne</h1>
     <div class="main-container">
         <!-- MOLARIA JS QUE ADAPTASE EL FORMULARIO DEL ALUMNO SEGUN SI SELECCIONA EL CURSO SEGUN EL CÓDIGO-->

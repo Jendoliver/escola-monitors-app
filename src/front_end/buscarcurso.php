@@ -11,7 +11,7 @@
         errorNotLogged();
     else
     { ?>
-    <header><img src=""></img></header>
+    <header><img src="img/escolamonitorslogo.png"></img></header>
     <h1>Cerca de cursos</h1>
     <div class="main-container">
         <!-- MOLARIA JS QUE ADAPTASE EL FORMULARIO SEGUN SI SE BUSCA EL CURSO SEGUN EL CÓDIGO O TIPO+MODALIDAD+AÑO -->

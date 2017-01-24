@@ -21,7 +21,7 @@
     }
     else
     {?>
-    <header><img src=""></img></header>
+    <header><img src="img/escolamonitorslogo.png"></img></header>
     <h1>Autentificació de l'administrador</h1>
     <div class="main-container">
         Introdueix les teves credencials d'administrador:

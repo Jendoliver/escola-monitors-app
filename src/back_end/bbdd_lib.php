@@ -22,6 +22,12 @@ function desconectar($con) // Otra que tal
     mysqli_close($con);
 }
 
+function printBackButton()
+{
+    $url = htmlspecialchars($_SERVER['HTTP_REFERER']); 
+    echo "<input type='submit' formaction='$url' value='Volver'>"; 
+}
+
 //AUTENTICACIÓN
 function checkadmin($user, $pass) // Función que comprueba que el login es correcto
 {
@@ -71,9 +77,9 @@ function insertarCurso($tipo, $mod, $precio, $ano) // FUNCIÓN QUE INSERTA UN CU
     else
     {
         echo mysqli_error($conexion);
+        desconectar($conexion);
+        return 0;
     }
-    desconectar($conexion);
-    
 }
 
 function insertarAlumno($codigo, $dni, $nom, $ape1, $ape2, $nacim, $dir, $tel, $email) // FUNCIÓN QUE INSERTA A UN ALUMNO EN LA TABLA ALUMNO Y LO RELACIONA CON EL CURSO DE CODIGO $code --- DEVUELVE 0 SI ERROR
@@ -151,7 +157,9 @@ function cursoExists($code) // FUNCIÓN QUE DEVUELVE 1 SI EL CURSO EXISTE Y 0 SI
 /********PROCEDIMIENTOS*********/
 function mostrarCodigo($codigo) // PROCEDIMIENTO QUE MUESTRA EL CÓDIGO DE CURSO RECIÉN CREADO
 {
-    // POPUP JS   
+    // POPUP JS :(
+    echo "El codi del curs creat es $codigo";
+    printBackButton();
 }
 
 function alumnoInsertado() // PROCEDIMIENTO QUE CONFIRMA QUE UN ALUMNO HA SIDO INSERTADO CON ÉXITO
@@ -168,6 +176,32 @@ function showCursoByCode($code) // PROCEDIMIENTO QUE MUESTRA UN SOLO CURSO CON i
 function showCursos($tipo, $mod, $ano) // PROCEDIMIENTO QUE MUESTRA UNO O VARIOS CURSOS SEGÚN EL TIPO, MODALIDAD Y AÑO ESPECIFICADO
 {
     
+}
+
+function showAlumnoByNom($nom) // TODO
+{
+    $con = conectar("edm");
+    if($res = mysqli_query($con, "SELECT * FROM Alumno WHERE nombre")) // HAY Q HACER ALGO CON LOS ESPACIOS
+}
+
+function showAlumnoByEmail($email)
+{
+    $con = conectar("edm");
+    if($res = mysqli_query($con, "SELECT * FROM Alumno WHERE email = '$email'"))
+    {
+        echo ""
+    }
+}
+
+function createTable($data, $border)
+{
+    echo "<table border='$border'px><th>";
+    foreach($data as $key => $value)
+    {
+        echo "<td>$key</td>";
+    }
+    echo "</th>";
+    foreach
 }
 
 ?>

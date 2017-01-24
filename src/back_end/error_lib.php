@@ -4,6 +4,10 @@
 * error_lib.php: LIBRERÍA DE ERRORES DE LA APLICACIÓN
 *
 */
+function noResults()
+{
+    echo "No se han encontrado resultados";
+}
 
 function errorCrearCurso()
 {
@@ -38,4 +42,9 @@ function errorLogin()
 function errorNotLogged()
 {
     echo "NO HAS INICIADO SESIÓN --- ACCESO DENEGADO";
+}
+
+function errorSelector()
+{
+    echo "ERROR EN SELECTOR.PHP";
 }

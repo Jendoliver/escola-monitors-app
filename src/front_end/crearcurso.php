@@ -11,7 +11,7 @@
         errorNotLogged();
     else
     { ?>
-    <header><img src=""></img></header>
+    <header><img src="img/escolamonitorslogo.png"></img></header>
     <h1>Creació d'un nou curs</h1>
     <div class="main-container">
         Introdueix les dades del nou curs...

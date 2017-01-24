@@ -13,14 +13,18 @@
         errorNotLogged();
     else
     { ?>
-    <header><img src=""></img></header>
+    <header><img src="img/escolamonitorslogo.png"></img></header>
     <h1>GESTIÓ D'ALUMNES</h1>
     <div class="main-container">
         Buscar alumne:
-        <form action="gestioalumnes.php" method="POST">
-            Cerca per nom, mail, DNI o telèfon: <input type="text" name="data" placeholder="Introdueix aqui les dades...">
-            <input type="submit">
-        </form>
+        <form action="selector.php" method="POST">
+            Tipus de cerca: <input type="radio" name="tipo" value="nom" required> Per Nom <input type="radio" name="tipo" value="email" required> Per Email <input type="radio" name="tipo" value="dni" required> Per DNI <input type="radio" name="tipo" value="tel" required> Per Telèfon
+            <input type="text" name="data" placeholder="Introdueix aqui les dades..." required>
+            <input type="submit" value="CERCA">
+        </form><br><br>
+        
+        Cercar alumnes que no han pagat: <input type="submit" name="morosos" value="CERCA" formaction="selector.php"><br>
+        Cercar alumnes aprovats: <input type="submit" name="aprobados" value="CERCA" formaction="selector.php">
     </div>
     <footer></footer>
     <?php } ?>

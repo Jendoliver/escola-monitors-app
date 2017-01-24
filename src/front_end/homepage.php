@@ -13,7 +13,7 @@
         errorNotLogged();
     else
     { ?>
-    <header><img src=""></img></header>
+    <header><img src="img/escolamonitorslogo.png"></img></header>
     <h1>GESTIÓ DE L'ESCOLA DE MONITORS</h1>
     <div class="main-container">
         <nav>
