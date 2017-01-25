@@ -185,8 +185,9 @@ function showCursos($tipo, $mod, $ano) // PROCEDIMIENTO QUE MUESTRA UNO O VARIOS
 
 function showAlumnoByNom($nom) // TODO
 {
-    $con = conectar("edm");
+   /* $con = conectar("edm");
     if($res = mysqli_query($con, "SELECT * FROM Alumno WHERE nombre")) // HAY Q HACER ALGO CON LOS ESPACIOS
+    */
 }
 
 function showAlumnoByEmail($email)
@@ -194,7 +195,7 @@ function showAlumnoByEmail($email)
     $con = conectar("edm");
     if($res = mysqli_query($con, "SELECT * FROM Alumno WHERE email = '$email'"))
     {
-        echo ""
+        echo "";
     }
 }
 

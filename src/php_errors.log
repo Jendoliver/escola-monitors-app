@@ -8,3 +8,24 @@
 [17-Jan-2017 15:56:44 UTC] PHP Stack trace:
 [17-Jan-2017 15:56:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/index.php:0
 [23-Jan-2017 22:44:26 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/src/front_end/index.php on line 17
+[25-Jan-2017 17:39:46 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 190
+[25-Jan-2017 17:39:46 UTC] PHP Stack trace:
+[25-Jan-2017 17:39:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/index.php:0
+[25-Jan-2017 17:39:53 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 190
+[25-Jan-2017 17:39:53 UTC] PHP Stack trace:
+[25-Jan-2017 17:39:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/index.php:0
+[25-Jan-2017 17:40:51 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 190
+[25-Jan-2017 17:40:51 UTC] PHP Stack trace:
+[25-Jan-2017 17:40:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/index.php:0
+[25-Jan-2017 17:41:12 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 190
+[25-Jan-2017 17:41:12 UTC] PHP Stack trace:
+[25-Jan-2017 17:41:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/index.php:0
+[25-Jan-2017 17:41:25 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 190
+[25-Jan-2017 17:41:25 UTC] PHP Stack trace:
+[25-Jan-2017 17:41:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/index.php:0
+[25-Jan-2017 17:41:30 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 190
+[25-Jan-2017 17:41:30 UTC] PHP Stack trace:
+[25-Jan-2017 17:41:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/index.php:0
+[25-Jan-2017 17:42:06 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 199
+[25-Jan-2017 17:42:06 UTC] PHP Stack trace:
+[25-Jan-2017 17:42:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/index.php:0

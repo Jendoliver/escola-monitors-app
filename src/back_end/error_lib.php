@@ -38,13 +38,20 @@ function errorConsulta()
 
 function errorLogin()
 {
-    echo "LOGIN INCORRECTO";
+    $message = "Login incorecto";
+    echo "<script type='text/javascript'>
+    alert('$message');
+    window.location = '../front_end/index.php';
+    </script>";
 }
 
 function errorNotLogged()
 {
-    echo "No has iniciat sessio --- ACCES DENEGAT";
-    echo "<input type='submit' value='Iniciar Sessió' formaction='index.php'>";
+    $message = "No has iniciat sessió --- ACCÉS DENEGAT";
+    echo "<script type='text/javascript'>
+    alert('$message');
+    window.location = '../front_end/index.php';
+    </script>";
 }
 
 function errorSelector()

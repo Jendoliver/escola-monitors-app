@@ -16,9 +16,9 @@
     <div class="main-container">
         Introdueix les dades del nou curs...
         <form action="../back_end/insertor.php" method="POST">
-            Tipus del curs: <input type=radio name="tipus_curs" value="M"> Monitor <input type=radio name="tipus_curs" value="D"> Director<br>
-            Modalitat: <input type=radio name="modalitat" value="mati"> Matí <input type=radio name="modalitat" value="tarda"> Tarda <input type=radio name="modalitat" value="finde"> Cap de setmana <input type=radio name="modalitat" value="intensiu"> Intensiu<br>
-            Preu del curs: <input type=number min="0" max="10000" name="preu" required><br>
+            Tipus del curs: <input type=radio name="tipus_curs" value="M" required> Monitor <input type=radio name="tipus_curs" value="D" required> Director<br>
+            Modalitat: <input type=radio name="modalitat" value="mati" required> Matí <input type=radio name="modalitat" value="tarda" required> Tarda <input type=radio name="modalitat" value="finde" required> Cap de setmana <input type=radio name="modalitat" value="intensiu" required> Intensiu<br>
+            Preu del curs: <input type=number min="0" max="10000" name="preu" required> €<br>
             Any del curs: <input type=number min="2017" max="3000" name="any" required><br>
             <input type="submit" value="CREAR CURS">
         </form>
