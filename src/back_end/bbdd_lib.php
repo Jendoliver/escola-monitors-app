@@ -138,7 +138,7 @@ function updateCurso($code, $tipo, $mod, $fecha_ini, $fecha_fin, $lugar, $precio
 function updateAlumnoPersonal($dni, $nom, $cog1, $cog2, $dnaix, $dir, $tel, $email)
 {
     $con = conectar("edm");
-    $update = "UPDATE Alumno SET nombre = '$nom', ape1 = '$cog1', ape2 = '$cog2', fecha_nacimiento = '$dnaix', direccion = '$dir', telefono = '$tel', email = '$email' WHERE dni = $dni;";
+    $update = "UPDATE Alumno SET nombre = '$nom', ape1 = '$cog1', ape2 = '$cog2', fecha_nacimiento = '$dnaix', direccion = '$dir', telefono = '$tel', email = '$email' WHERE dni = '$dni';";
     if(mysqli_query($con, $update))
     {
         desconectar($con);
@@ -214,7 +214,7 @@ function cursoExists($code) // FUNCIÓN QUE DEVUELVE 1 SI EL CURSO EXISTE Y 0 SI
 function showCursoByCode($code) // PROCEDIMIENTO QUE MUESTRA UN SOLO CURSO CON id_curso = $code Y OPCIONES DE GESTIÓN (mostrar alumnos del curso, modificar curso //NUNCA EL CÓDIGO//)
 {
     $con = conectar("edm");
-    if($res = mysqli_query($con, "SELECT * FROM Curso WHERE id_curso = $code;"))
+    if($res = mysqli_query($con, "SELECT id_curso as 'Codi de curs', tipo_curso as 'Tipus de curs', modalidad as 'Modalitat', fecha_ini as 'Data Inici', fecha_fin as 'Data Final', lugar as 'Lloc', precio as 'Preu' FROM Curso WHERE id_curso = $code;"))
     {
         createTableCursos($con, $res);
         desconectar($con);
@@ -260,7 +260,7 @@ function showCursos($tipo, $mod, $date) // PROCEDIMIENTO QUE MUESTRA UNO O VARIO
         }
     }
     $where .= ";";
-    $query = "SELECT * FROM Curso";
+    $query = "SELECT id_curso as 'Codi de curs', tipo_curso as 'Tipus de curs', modalidad as 'Modalitat', fecha_ini as 'Data Inici', fecha_fin as 'Data Final', lugar as 'Lloc', precio as 'Preu' FROM Curso";
     if($restric)
         $query .= $where;
     
@@ -284,7 +284,7 @@ function showCursos($tipo, $mod, $date) // PROCEDIMIENTO QUE MUESTRA UNO O VARIO
 function showAlumnoByNom($nom, $cog1, $cog2) // TODO
 {
     $con = conectar("edm");
-    $select = "SELECT * FROM Alumno WHERE nombre = '$nom' and ape1 = '$cog1' and ape2 = '$cog2';";
+    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno WHERE nombre = '$nom' and ape1 = '$cog1' and ape2 = '$cog2';";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -304,7 +304,7 @@ function showAlumnoByNom($nom, $cog1, $cog2) // TODO
 function showAlumnoByEmail($email)
 {
     $con = conectar("edm");
-    $select = "SELECT * FROM Alumno WHERE email = '$email';";
+    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno WHERE email = '$email';";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -324,7 +324,7 @@ function showAlumnoByEmail($email)
 function showAlumnoByDNI($dni)
 {
     $con = conectar("edm");
-    $select = "SELECT * FROM Alumno WHERE dni = '$dni';";
+    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno WHERE dni = '$dni';";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -344,7 +344,7 @@ function showAlumnoByDNI($dni)
 function showAlumnoByTel($tel)
 {
     $con = conectar("edm");
-    $select = "SELECT * FROM Alumno WHERE telefono = '$tel';";
+    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno WHERE telefono = '$tel';";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -384,7 +384,7 @@ function showAlumnosCurso($code)
 function showMorosos()
 {
     $con = conectar("edm");
-    $select = "SELECT * FROM Alumno WHERE dinero_debido != 0;";
+    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', direccion as 'Direcció', telefono as 'Telèfon', email, dinero_debido as 'Deutes en €' FROM Alumno WHERE dinero_debido != 0;";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -404,7 +404,7 @@ function showMorosos()
 function showAprobados()
 {
     $con = conectar("edm");
-    $select = "SELECT * FROM Alumno WHERE aprobado = 2;";
+    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno WHERE aprobado = 2;";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -438,7 +438,7 @@ function createTableCursos($con, $res) // $con = conexion bbdd, $res = resultado
             $table .= "<tr>"; // principio de fila
             foreach($row as $key => $value) // llenamos una fila
             {
-                if($key == "id_curso") // pillamos la primary para lanzar el modify sobre eso
+                if($key == "Codi de curs") // pillamos la primary para lanzar el modify sobre eso
                 {    
                     $idcurso = $value;
                 }
@@ -471,7 +471,7 @@ function createTableAlumnos($con, $res)
             $table .= "<tr>"; // principio de fila
             foreach($row as $key => $value) // llenamos una fila
             {
-                if($key == "dni") // pillamos la primary para lanzar el modify sobre eso
+                if($key == "DNI") // pillamos la primary para lanzar el modify sobre eso
                 {
                     $dni = $value;
                 }

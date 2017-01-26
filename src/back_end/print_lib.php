@@ -8,12 +8,12 @@
 function printBackButton()
 {
     $url = htmlspecialchars($_SERVER['HTTP_REFERER']); 
-    echo "<form><input type='submit' formaction='$url' value='Torna enrere'></form>"; 
+    echo "<form action='$url' method='POST'><input type='submit' name='back' value='Torna enrere'></form>"; 
 }
 
 function printHomeButton()
 {
-    echo "<form><input type='submit' formaction='../front_end/homepage.php' value='Torna a la pagina principal'></form>";
+    echo "<form action='../front_end/homepage.php' method='POST'><input type='submit' value='Torna a la pàgina principal'></form>";
 }
 
 function mostrarCodigo($codigo) // PROCEDIMIENTO QUE MUESTRA EL CÓDIGO DE CURSO RECIÉN CREADO
