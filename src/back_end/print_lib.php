@@ -27,9 +27,21 @@ function mostrarCodigo($codigo) // PROCEDIMIENTO QUE MUESTRA EL CÓDIGO DE CURSO
 
 function alumnoInsertado() // PROCEDIMIENTO QUE CONFIRMA QUE UN ALUMNO HA SIDO INSERTADO CON ÉXITO
 {
-    $message = "Alumne insertat amb èxit";
+    $message = "Alumne insertat amb èxit. En vols afegir un altre?";
+    echo "<script type='text/javascript'>
+    var confirmar=confirm('$message'); 
+    if(confirmar)
+    window.location = '../front_end/alta_alumno.php';
+    else
+    window.location = '../front_end/homepage.php';
+    </script>";
+}
+
+function updateCorrect()
+{
+    $message = "Actualització exitosa";
     echo "<script type='text/javascript'>
     alert('$message');
-    window.location = '../front_end/alta_alumno.php';
+    window.location = '../front_end/homepage.php';
     </script>";
 }

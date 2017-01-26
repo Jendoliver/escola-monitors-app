@@ -67,3 +67,17 @@
 [26-Jan-2017 01:59:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
 [26-Jan-2017 01:59:46 UTC] PHP   2. showMorosos() /home/ubuntu/workspace/src/back_end/selector.php:37
 [26-Jan-2017 01:59:46 UTC] PHP   3. createTableAlumnos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:355
+[26-Jan-2017 16:09:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 424
+[26-Jan-2017 16:09:41 UTC] PHP Stack trace:
+[26-Jan-2017 16:09:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/modificardatos.php:0
+[26-Jan-2017 16:09:41 UTC] PHP   2. showAlumnosCurso() /home/ubuntu/workspace/src/front_end/modificardatos.php:36
+[26-Jan-2017 16:09:41 UTC] PHP   3. createTableAlumnos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:335
+[26-Jan-2017 16:09:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 432
+[26-Jan-2017 16:09:41 UTC] PHP Stack trace:
+[26-Jan-2017 16:09:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/modificardatos.php:0
+[26-Jan-2017 16:09:41 UTC] PHP   2. showAlumnosCurso() /home/ubuntu/workspace/src/front_end/modificardatos.php:36
+[26-Jan-2017 16:09:41 UTC] PHP   3. createTableAlumnos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:335
+[26-Jan-2017 16:59:37 UTC] PHP Fatal error:  Call to undefined function updateCorrect() in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 149
+[26-Jan-2017 16:59:37 UTC] PHP Stack trace:
+[26-Jan-2017 16:59:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/updater.php:0
+[26-Jan-2017 16:59:37 UTC] PHP   2. updateAlumnoPersonal() /home/ubuntu/workspace/src/back_end/updater.php:11

@@ -6,39 +6,33 @@
 */
 require_once "print_lib.php";
 
-function noResults()
-{
-    echo "No se han encontrado resultados";
-}
-
-function errorCrearCurso()
-{
-    echo "ERROR CREANDO EL CURSO";
-}
-
+/**********ERRORES COMUNES DE USUARIO************/
 function errorInsertarAlumno()
 {
-    echo "ERROR INSERTANDO ALUMNO";
+    $message = "Error insertant alumne: comprova que el DNI no sigui duplicat";
+    echo "<script type='text/javascript'>
+    alert('$message');
+    window.location = '../front_end/alta_alumno.php';
+    </script>";
 }
 
 function errorCursoNoExiste()
 {
-    echo "EL CURSO NO EXISTE";
+    $message = "El curs especificat no existeix";
+    echo "<script type='text/javascript'>
+    alert('$message');
+    window.location = '../front_end/alta_alumno.php';
+    </script>";
 }
 
-function errorInsertor()
+function errorNoResults()
 {
-    echo "ERROR EN INSERTOR.PHP";
-}
-
-function errorConsulta()
-{
-    echo "ERROR AL CONSULTAR A LA BASE DE DATOS";
+    echo "<h1>No hi ha resultats</h1>";
 }
 
 function errorLogin()
 {
-    $message = "Login incorecto";
+    $message = "Login incorecte";
     echo "<script type='text/javascript'>
     alert('$message');
     window.location = '../front_end/index.php';
@@ -54,17 +48,33 @@ function errorNotLogged()
     </script>";
 }
 
+/******ERRORES GRAVES*******/
 function errorSelector()
 {
-    echo "ERROR EN SELECTOR.PHP";
+    echo "<h1>ERROR AL FITXER SELECTOR.PHP: CONTACTA AMB EL TEU PROGRAMADOR</h1>";
 }
 
 function errorUpdater()
 {
-    echo "ERROR EN UPDATER.PHP";
+    echo "<h1>ERROR AL FITXER UPDATER.PHP: CONTACTA AMB EL TEU PROGRAMADOR</h1>";
 }
 
 function errorModificar()
 {
-    echo "ERROR EN LA LLAMADA A MODIFICARDATOS.PHP";
+    echo "<h1>ERROR EN LA CRIDA A MODIFICARDATOS.PHP: CONTACTA AMB EL TEU PROGRAMADOR</h1>";
+}
+
+function errorInsertor()
+{
+    echo "<h1>ERROR AL FITXER INSERTOR.PHP: CONTACTA AMB EL TEU PROGRAMADOR</h1>";
+}
+
+function errorConsulta()
+{
+    echo "<h1>ERROR AL CONSULTAR A LA BASE DE DADES: CONTACTA AMB EL TEU PROGRAMADOR</h1>";
+}
+
+function errorCrearCurso()
+{
+    echo "<h1>ERROR CREANT EL CURS: CONTACTA AMB EL TEU PROGRAMADOR</h1>";
 }

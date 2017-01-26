@@ -23,8 +23,8 @@ ape1 varchar(30) NOT NULL,
 ape2 varchar(30),
 fecha_nacimiento date,
 direccion varchar(100),
-telefono varchar(15) UNIQUE,
-email varchar(100) UNIQUE,
+telefono varchar(15),
+email varchar(100),
 calificacion_teoria tinyint DEFAULT 0, -- 0: Sin calificar, 1: Pendiente, 2: Aprobado, 3: No aprobado
 calificacion_practicas tinyint DEFAULT 0, -- 0: Sin calificar, 1: Pendiente, 2: Aprobado, 3: No aprobado
 dinero_debido int DEFAULT 0, -- La pasta que debe un alumno

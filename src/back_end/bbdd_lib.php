@@ -84,20 +84,17 @@ function insertarAlumno($codigo, $dni, $nom, $ape1, $ape2, $nacim, $dir, $tel, $
         $insert = "INSERT INTO Inscrito VALUES('$dni', $codigo);";
         if(mysqli_query($conexion, $insert))
         {
-            echo "Alumno dado de alta";
             desconectar($conexion);
             return 1;
         }
         else
         {
-            echo mysqli_error($conexion);
             desconectar($conexion);
             return 0;
         }
     }
     else
     {
-        echo mysqli_error($conexion);
         desconectar($conexion);
         return 0;
     }
@@ -122,10 +119,8 @@ function createCode() // FUNCIÓN QUE DEVUELVE UN CÓDIGO DE CURSO NUEVO
 }
 
 //UPDATES
-function updateCurso($tipo, $mod, $fecha_ini, $fecha_fin, $lugar, $precio)
+function updateCurso($code, $tipo, $mod, $fecha_ini, $fecha_fin, $lugar, $precio)
 {
-    session_start();
-    $code = $_SESSION["primary"];
     $con = conectar("edm");
     $update = "UPDATE Curso SET tipo_curso = $tipo, modalidad = '$mod', fecha_ini = '$fecha_ini', fecha_fin = '$fecha_fin', lugar = '$lugar', precio = $precio WHERE id_curso = $code;";
     if(mysqli_query($con, $update))
@@ -140,10 +135,8 @@ function updateCurso($tipo, $mod, $fecha_ini, $fecha_fin, $lugar, $precio)
     }
 }
 
-function updateAlumnoPersonal($nom, $cog1, $cog2, $dnaix, $dir, $tel, $email)
+function updateAlumnoPersonal($dni, $nom, $cog1, $cog2, $dnaix, $dir, $tel, $email)
 {
-    session_start();
-    $dni = $_SESSION["primary"];
     $con = conectar("edm");
     $update = "UPDATE Alumno SET nombre = '$nom', ape1 = '$cog1', ape2 = '$cog2', fecha_nacimiento = '$dnaix', direccion = '$dir', telefono = '$tel', email = '$email' WHERE dni = $dni;";
     if(mysqli_query($con, $update))
@@ -158,12 +151,10 @@ function updateAlumnoPersonal($nom, $cog1, $cog2, $dnaix, $dir, $tel, $email)
     }
 }
 
-function updateAlumnoExpedient($teorica, $practica, $convocatoria, $memoria, $aprovat)
+function updateAlumnoExpedient($dni, $teorica, $practica, $convocatoria, $memoria, $aprovat)
 {
-    session_start();
-    $dni = $_SESSION["primary"];
     $con = conectar("edm");
-    $update = "UPDATE Alumno SET calificacion_teoria = $teorica, calificacion_practicas = $practica, fecha_memoria = '$convocatoria', memoria = $memoria, aprobado = $aprovat WHERE dni = $dni;";
+    $update = "UPDATE Alumno SET calificacion_teoria = $teorica, calificacion_practicas = $practica, fecha_memoria = '$convocatoria', memoria = $memoria, aprobado = $aprovat WHERE dni = '$dni';";
     if(mysqli_query($con, $update))
     {
         desconectar($con);
@@ -176,12 +167,10 @@ function updateAlumnoExpedient($teorica, $practica, $convocatoria, $memoria, $ap
     }
 }
 
-function updateAlumnoDeutas($money)
+function updateAlumnoDeutas($dni, $money)
 {
-    session_start();
-    $dni = $_SESSION["primary"];
     $con = conectar("edm");
-    $update = "UPDATE Alumno SET dinero_debido = $money WHERE dni = $dni;";
+    $update = "UPDATE Alumno SET dinero_debido = $money WHERE dni = '$dni';";
     if(mysqli_query($con, $update))
     {
         desconectar($con);
@@ -388,64 +377,70 @@ function showAprobados()
 
 function createTableCursos($con, $res) // $con = conexion bbdd, $res = resultado query
 {
-    $row = mysqli_fetch_assoc($res);
-    $table = "<table border=2px>";
-    $table .= "<thead>";
-    foreach($row as $key => $value) // header tabla
+    if($row = mysqli_fetch_assoc($res)) //comprobamos que hay algo para evitar warning
     {
-        $table .= "<th>$key</th>";
-    }
-    $table .= "<th>Modificar curs</th><th>Visualitzar alumnes</th></thead><tbody>"; // columna de botón modificar, cierre del header y apertura del body
-
-    do // llenar tabla con el contenido de la query
-    {
-        $table .= "<tr>"; // principio de fila
-        foreach($row as $key => $value) // llenamos una fila
+        $table = "<table border=2px>";
+        $table .= "<thead>";
+        foreach($row as $key => $value) // header tabla
         {
-            if($key == "id_curso") // pillamos la primary para lanzar el modify sobre eso
-            {    
-                session_start();
-                $_SESSION["primary"] = $value;
-            }
-            $table .= "<td>$value</td>";
+            $table .= "<th>$key</th>";
         }
-        $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='submit' name='curso' value='MODIFICAR'></form></td>"; // botón de modificar
-        $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='submit' name='alumnos' value='MOSTRAR'></form></td>";
-        $table .= "</tr>";
-    } while ($row = mysqli_fetch_assoc($res));
-    $table .= "</tbody></table>";
-    echo $table;
+        $table .= "<th>Modificar curs</th><th>Visualitzar alumnes</th></thead><tbody>"; // columna de botón modificar, cierre del header y apertura del body
+    
+        do // llenar tabla con el contenido de la query
+        {
+            $table .= "<tr>"; // principio de fila
+            foreach($row as $key => $value) // llenamos una fila
+            {
+                if($key == "id_curso") // pillamos la primary para lanzar el modify sobre eso
+                {    
+                    $idcurso = $value;
+                }
+                $table .= "<td>$value</td>";
+            }
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='idcurso' value='$idcurso'><input type='submit' name='curso' value='MODIFICAR'></form></td>"; // botón de modificar
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='idcurso' value='$idcurso'><input type='submit' name='alumnos' value='MOSTRAR'></form></td>";
+            $table .= "</tr>";
+        } while ($row = mysqli_fetch_assoc($res));
+        $table .= "</tbody></table>";
+        echo $table;
+    }
+    else
+        errorNoResults();
 }
 
 function createTableAlumnos($con, $res)
 {
-    $row = mysqli_fetch_assoc($res);
-    $table = "<table border=2px>";
-    $table .= "<thead>";
-    foreach($row as $key => $value) // header tabla
+    if($row = mysqli_fetch_assoc($res)) // checkiamos que hay resultados
     {
-        $table .= "<th>$key</th>";
-    }
-    $table .= "<th>Modificar dades personals</th><th>Modificar expedient</th><th>Modificar deutes</th></thead><tbody>"; // columna de botón modificar, cierre del header y apertura del body
-    do // llenar tabla con el contenido de la query
-    {
-        $table .= "<tr>"; // principio de fila
-        foreach($row as $key => $value) // llenamos una fila
+        $table = "<table border=2px>";
+        $table .= "<thead>";
+        foreach($row as $key => $value) // header tabla
         {
-            if($key == "dni") // pillamos la primary para lanzar el modify sobre eso
-            {
-                session_start();
-                $_SESSION["primary"] = $value;
-            }
-            $table .= "<td>$value</td>";
+            $table .= "<th>$key</th>";
         }
-        $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='submit' name='personal' value='MODIFICAR'></form></td>";
-        $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='submit' name='expedient' value='MODIFICAR'></form></td>";// botón de modificar
-        $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='submit' name='deutes' value='MODIFICAR'></form></td>";
-        $table .= "</tr>";
-    } while ($row = mysqli_fetch_assoc($res));
-    $table .= "</tbody></table>";
-    echo $table;
+        $table .= "<th>Modificar dades personals</th><th>Modificar expedient</th><th>Modificar deutes</th></thead><tbody>"; // columna de botón modificar, cierre del header y apertura del body
+        do // llenar tabla con el contenido de la query
+        {
+            $table .= "<tr>"; // principio de fila
+            foreach($row as $key => $value) // llenamos una fila
+            {
+                if($key == "dni") // pillamos la primary para lanzar el modify sobre eso
+                {
+                    $dni = $value;
+                }
+                $table .= "<td>$value</td>";
+            }
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' name='personal' value='MODIFICAR'></form></td>";
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' name='expedient' value='MODIFICAR'></form></td>";// botón de modificar
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' name='deutes' value='MODIFICAR'></form></td>";
+            $table .= "</tr>";
+        } while ($row = mysqli_fetch_assoc($res));
+        $table .= "</tbody></table>";
+        echo $table;
+    }
+    else
+        errorNoResults();
 }
 
 ?>
