@@ -16,7 +16,7 @@ if(isset($_POST["codi_curs"])) // VENIMOS DE buscarcurso.php CON CÓDIGO DE CURS
 else if(isset($_POST["tipus_curs"])) // VENIMOS DE buscarcurso.php CON OPCIONES MÚLTIPLES
 {
     extract($_POST);
-    showCursos($tipus_curs, $modalitat_curs, $any_curs);
+    showCursos($tipus_curs, $modalitat_curs, $data_curs);
 }
 
 else if(isset($_POST["data"]) || isset($_POST["nom"])) // VENIMOS DE gestioalumnes.php pa buscar un alumno en kokreta

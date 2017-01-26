@@ -230,9 +230,55 @@ function showCursoByCode($code) // PROCEDIMIENTO QUE MUESTRA UN SOLO CURSO CON i
     }
 }
 
-function showCursos($tipo, $mod, $ano) // PROCEDIMIENTO QUE MUESTRA UNO O VARIOS CURSOS SEGÚN EL TIPO, MODALIDAD Y AÑO ESPECIFICADO
+function showCursos($tipo, $mod, $date) // PROCEDIMIENTO QUE MUESTRA UNO O VARIOS CURSOS SEGÚN EL TIPO, MODALIDAD Y AÑO ESPECIFICADO
 {
+    $where = " WHERE "; // MONTAMOS LA PARTE WHERE DE LA CONSULTA
+    $restric = false;
+    if($tipo != "ANY")
+    {
+        $where .= "tipo_curso = $tipo";
+        $restric = true;
+    }
+    if($mod != "ANY")
+    {
+        if($restric) // si no es la primera restricción añadimos el AND, sino igual
+            $where .= " AND modalidad = '$mod'";
+        else
+        {
+            $where .= "modalidad = '$mod'";
+            $restric = true;
+        }
+    }
+    if($date != "ANY")
+    {
+        if($restric)
+            $where .= " AND fecha_ini = '$date'";
+        else
+        {
+            $where .= "fecha_ini = '$date'";
+            $restric = true;
+        }
+    }
+    $where .= ";";
+    $query = "SELECT * FROM Curso";
+    if($restric)
+        $query .= $where;
     
+    $con = conectar("edm");
+    if($res = mysqli_query($con, $query))
+    {
+        createTableCursos($con, $res);
+        desconectar($con);
+        printBackButton();
+        printHomeButton();
+    }
+    else
+    {
+        errorConsulta();
+        desconectar($con);
+        printBackButton();
+        printHomeButton();
+    }
 }
 
 function showAlumnoByNom($nom, $cog1, $cog2) // TODO
