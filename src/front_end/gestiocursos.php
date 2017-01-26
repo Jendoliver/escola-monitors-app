@@ -11,7 +11,7 @@
         errorNotLogged();
     else
     { ?>
-    <header><img src="img/escolamonitorslogo.png"></img></header>
+    <header><a href="homepage.php"><img src="img/escolamonitorslogo.png"></img></a></header>
     <h1>GESTIÓ DE CURSOS</h1>
     <div class="main-container">
         <nav>

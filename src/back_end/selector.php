@@ -19,32 +19,28 @@ else if(isset($_POST["tipus_curs"])) // VENIMOS DE buscarcurso.php CON OPCIONES 
     showCursos($tipus_curs, $modalitat_curs, $any_curs);
 }
 
-else if(isset($_POST["data"])) // VENIMOS DE gestioalumnes.php pa buscar un alumno en kokreta
+else if(isset($_POST["data"]) || isset($_POST["nom"])) // VENIMOS DE gestioalumnes.php pa buscar un alumno en kokreta
 {
     extract($_POST); //heckiar el tipo de dato
     switch($tipo)
     {
-        case "nom": showAlumnoByNom($data); break; // hay que actualizar esto a nombre, ape1, ape2
+        case "nom": showAlumnoByNom($nom, $cog1, $cog2); break;
         case "email": showAlumnoByEmail($data); break;
         case "dni": showAlumnoByDNI($data); break;
         case "tel": showAlumnoByTel($data); break;
         default: errorSelector();
     }
-    printBackButton();
 }
 
-else if(isset($_POST["submit"])) // VENIMOS DE gestioalumnes.php, pudiendo ser lista morosos, aprobados...
+else if(isset($_POST["morosos"])) // VENIMOS DE gestioalumnes.php, listar morosos.
 {
-    if($_POST["submit"] == "morosos") // mostrar listado morosos
-    {
-        showMorosos();
-    }
-    else if($_POST["submit"] == "aprobados") // mostrar listado aprobados
-    {
-        showAprobados();
-    }
-    //else if ... se puede extender easy
+    showMorosos();
 }
 
+else if(isset($_POST["aprobados"])) // mostrar listado aprobados
+{
+    showAprobados();
+}
+//else if ... se puede extender easy
 else
     errorSelector();

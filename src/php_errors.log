@@ -29,3 +29,41 @@
 [25-Jan-2017 17:42:06 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 199
 [25-Jan-2017 17:42:06 UTC] PHP Stack trace:
 [25-Jan-2017 17:42:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/index.php:0
+[25-Jan-2017 23:51:20 UTC] PHP Fatal error:  Cannot redeclare alumnoInsertado() (previously declared in /home/ubuntu/workspace/src/back_end/bbdd_lib.php:152) in /home/ubuntu/workspace/src/back_end/print_lib.php on line 28
+[25-Jan-2017 23:51:20 UTC] PHP Stack trace:
+[25-Jan-2017 23:51:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/gestioalumnes.php:0
+[25-Jan-2017 23:51:20 UTC] PHP   2. require_once() /home/ubuntu/workspace/src/front_end/gestioalumnes.php:12
+[25-Jan-2017 23:51:20 UTC] PHP   3. require_once() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:8
+[25-Jan-2017 23:51:41 UTC] PHP Fatal error:  Cannot redeclare alumnoInsertado() (previously declared in /home/ubuntu/workspace/src/back_end/bbdd_lib.php:152) in /home/ubuntu/workspace/src/back_end/print_lib.php on line 28
+[25-Jan-2017 23:51:41 UTC] PHP Stack trace:
+[25-Jan-2017 23:51:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/homepage.php:0
+[25-Jan-2017 23:51:41 UTC] PHP   2. require_once() /home/ubuntu/workspace/src/front_end/homepage.php:11
+[25-Jan-2017 23:51:41 UTC] PHP   3. require_once() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:8
+[26-Jan-2017 00:06:37 UTC] PHP Warning:  require_once(bbdd_lib.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/src/front_end/modificardatos.php on line 9
+[26-Jan-2017 00:06:37 UTC] PHP Stack trace:
+[26-Jan-2017 00:06:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/modificardatos.php:0
+[26-Jan-2017 00:06:37 UTC] PHP Fatal error:  require_once(): Failed opening required 'bbdd_lib.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/src/front_end/modificardatos.php on line 9
+[26-Jan-2017 00:06:37 UTC] PHP Stack trace:
+[26-Jan-2017 00:06:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/modificardatos.php:0
+[26-Jan-2017 01:24:19 UTC] PHP Warning:  require_once(bbdd_lib.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/src/front_end/modificardatos.php on line 10
+[26-Jan-2017 01:24:19 UTC] PHP Stack trace:
+[26-Jan-2017 01:24:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/modificardatos.php:0
+[26-Jan-2017 01:24:19 UTC] PHP Fatal error:  require_once(): Failed opening required 'bbdd_lib.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/src/front_end/modificardatos.php on line 10
+[26-Jan-2017 01:24:19 UTC] PHP Stack trace:
+[26-Jan-2017 01:24:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/modificardatos.php:0
+[26-Jan-2017 01:37:08 UTC] PHP Fatal error:  Call to undefined function errorModificar() in /home/ubuntu/workspace/src/front_end/modificardatos.php on line 95
+[26-Jan-2017 01:37:08 UTC] PHP Stack trace:
+[26-Jan-2017 01:37:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/modificardatos.php:0
+[26-Jan-2017 01:44:03 UTC] PHP Fatal error:  Call to undefined function errorUpdater() in /home/ubuntu/workspace/src/back_end/updater.php on line 18
+[26-Jan-2017 01:44:03 UTC] PHP Stack trace:
+[26-Jan-2017 01:44:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/updater.php:0
+[26-Jan-2017 01:59:46 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 425
+[26-Jan-2017 01:59:46 UTC] PHP Stack trace:
+[26-Jan-2017 01:59:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[26-Jan-2017 01:59:46 UTC] PHP   2. showMorosos() /home/ubuntu/workspace/src/back_end/selector.php:37
+[26-Jan-2017 01:59:46 UTC] PHP   3. createTableAlumnos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:355
+[26-Jan-2017 01:59:46 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 433
+[26-Jan-2017 01:59:46 UTC] PHP Stack trace:
+[26-Jan-2017 01:59:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[26-Jan-2017 01:59:46 UTC] PHP   2. showMorosos() /home/ubuntu/workspace/src/back_end/selector.php:37
+[26-Jan-2017 01:59:46 UTC] PHP   3. createTableAlumnos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:355

@@ -11,18 +11,18 @@
         errorNotLogged();
     else
     { ?>
-    <header><img src="img/escolamonitorslogo.png"></img></header>
+    <header><a href="homepage.php"><img src="img/escolamonitorslogo.png"></img></a></header>
     <h1>Alta alumne</h1>
     <div class="main-container">
         Afegir alumne a curs amb codi de curs:
         <form action="../back_end/insertor.php" method="POST">
-            Codi de curs: <input type="number" min="1" name="codi_curs"><br><br>
+            Codi de curs: <input type="number" min="1" name="codi_curs" required><br><br>
             
             DNI Alumne: <input type="text" minlength="9" maxlength="9" name="dni_alumne" required><br>
-            Nom Alumne: <input type="text" maxlength="30" name="nom" placeholder="Nom" required>  Primer cognom: <input type="text" maxlength="30" name="cognom1" placeholder="Cognom 1" required>  Segon cognom: <input type="text" maxlength="30" name="cognom2" placeholder="Cognom 2" required><br>
+            Nom Alumne: <input type="text" maxlength="30" name="nom" placeholder="Nom" required>  Primer cognom: <input type="text" maxlength="30" name="cognom1" placeholder="Cognom 1" required>  Segon cognom: <input type="text" maxlength="30" name="cognom2" placeholder="Cognom 2"><br>
             Data de naixement: <input type="date" name="data_naixement"><br>
             Direcció: <input type="text" name="direccio"><br>
-            Telèfon: <input type="text" minlength="9" maxlength="9" name="telefon"><br>
+            Telèfon: <input type="text" minlength="9" name="telefon"><br>
             Email: <input type="email" name="email_alumne"><br>
             <input type="submit" value="DONAR D'ALTA ALUMNE">
         </form><br><br>

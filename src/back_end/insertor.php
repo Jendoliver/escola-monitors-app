@@ -5,7 +5,7 @@ require_once "error_lib.php";
 if(isset($_POST["tipus_curs"])) // VENIMOS DE CREARCURSO.PHP
 {
     extract($_POST);
-    $codigo = insertarCurso($tipus_curs, $modalitat, $preu, $any); // Insertamos el curso y recibimos su código
+    $codigo = insertarCurso($tipus_curs, $modalitat, $fecha_ini, $fecha_fin, $lugar, $preu); // Insertamos el curso y recibimos su código
     if($codigo) // Comprobamos que realmente lo hemos insertado
         mostrarCodigo($codigo); // Mostramos el código del curso recién creado
     else

@@ -59,6 +59,11 @@ function errorSelector()
     echo "ERROR EN SELECTOR.PHP";
 }
 
+function errorUpdater()
+{
+    echo "ERROR EN UPDATER.PHP";
+}
+
 function errorModificar()
 {
     echo "ERROR EN LA LLAMADA A MODIFICARDATOS.PHP";

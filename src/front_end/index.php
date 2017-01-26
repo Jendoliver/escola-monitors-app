@@ -42,8 +42,8 @@
     <div class="main-container panel-body">
         Introdueix les teves credencials d'administrador:
         <form action="" method="POST">
-            Usuari: <input type="text" name="username"/><br>
-            Contrasenya: <input type="password" name="password"/><br>
+            Usuari: <input type="text" name="username" required/><br>
+            Contrasenya: <input type="password" name="password" required/><br>
             <input type="submit" value="ACCEDEIX"/>
         </form>
     </div>
