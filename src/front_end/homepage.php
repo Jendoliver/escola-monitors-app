@@ -39,7 +39,7 @@
 		                <div class="modal-body">
                             <blockquote class="blockquote-reverse">
                                 <p>Accedeix a aquesta secció per a realitzar cerces d'un alumne en concret, dels alumnes que tenen deutes pendents i dels alumnes aprovats. Des de les taules resultants podràs modificar la informació personal d'un alumne, el seu expedient i les seves deutes.</p>
-                                <footer>Cercar i modificar alumnes, llistat de morosos i aprovats</footer>
+                                <footer><em>Cercar i modificar alumnes, llistat de morosos i aprovats</em></footer>
                             </blockquote>
         		    	</div>
 				        <div class="modal-footer">
@@ -58,7 +58,7 @@
 		                <div class="modal-body">
 		                    <blockquote>
                                 <p>En aquesta secció podràs donar d'alta cursos, alumnes <em>(introduint-los directament a un curs prèviament creat)</em> i cercar cursos, tant com per visualitzar els alumnes que hi pertànyen com per modificar-los des de les taules resultants.</p><br>
-                                <footer>Donar d'alta cursos, donar d'alta alumnes, cercar i modificar cursos</footer>
+                                <footer><em>Donar d'alta cursos, donar d'alta alumnes, cercar i modificar cursos</em></footer>
                             </blockquote>
         		    	</div>
 				        <div class="modal-footer">
