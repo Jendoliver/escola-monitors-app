@@ -77,10 +77,33 @@ function insertarCurso($tipo, $mod, $fecha_ini, $fecha_fin, $lugar, $precio) // 
 
 function insertarAlumno($codigo, $dni, $nom, $ape1, $ape2, $nacim, $dir, $tel, $email) // FUNCIÓN QUE INSERTA A UN ALUMNO EN LA TABLA ALUMNO Y LO RELACIONA CON EL CURSO DE CODIGO $code --- DEVUELVE 0 SI ERROR
 {
-    $conexion = conectar("edm");
-    $insert = "INSERT INTO Alumno(`dni`,`nombre`,`ape1`,`ape2`,`fecha_nacimiento`,`direccion`,`telefono`,`email`) VALUES('$dni', '$nom', '$ape1', '$ape2', '$nacim', '$dir', '$tel', '$email');";
-    if(mysqli_query($conexion, $insert))
+    if(!alumnoExists($dni)) // el alumno es nuevo
     {
+        $conexion = conectar("edm");
+        $insert = "INSERT INTO Alumno(`dni`,`nombre`,`ape1`,`ape2`,`fecha_nacimiento`,`direccion`,`telefono`,`email`) VALUES('$dni', '$nom', '$ape1', '$ape2', '$nacim', '$dir', '$tel', '$email');";
+        if(mysqli_query($conexion, $insert))
+        {
+            $insert = "INSERT INTO Inscrito VALUES('$dni', $codigo);";
+            if(mysqli_query($conexion, $insert))
+            {
+                desconectar($conexion);
+                return 1;
+            }
+            else
+            {
+                desconectar($conexion);
+                errorConsulta();
+            }
+        }
+        else
+        {
+            desconectar($conexion);
+            errorConsulta();
+        }
+    }
+    else if(!alumnoIsInCurso($dni, $codigo)) // el alumno ya existe pero no en ese curso
+    {
+        $conexion = conectar("edm");
         $insert = "INSERT INTO Inscrito VALUES('$dni', $codigo);";
         if(mysqli_query($conexion, $insert))
         {
@@ -90,13 +113,12 @@ function insertarAlumno($codigo, $dni, $nom, $ape1, $ape2, $nacim, $dir, $tel, $
         else
         {
             desconectar($conexion);
-            return 0;
+            errorConsulta();
         }
     }
     else
     {
-        desconectar($conexion);
-        return 0;
+        return 0; // el alumno ya está inscrito a ese curso
     }
 }
 
@@ -191,6 +213,54 @@ function cursoExists($code) // FUNCIÓN QUE DEVUELVE 1 SI EL CURSO EXISTE Y 0 SI
     if($res = mysqli_query($con, $query)) // si la monarquia española ataca aka si no hay error
     {
         if(mysqli_num_rows($res)) // si existe el curso
+        {
+            desconectar($con);
+            return 1;
+        }
+        else
+        {
+            desconectar($con);
+            return 0;
+        }
+    }
+    else
+    {
+        desconectar($con);
+        errorConsulta();
+    }
+}
+
+function alumnoExists($dni)
+{
+    $con = conectar("edm");
+    $query = "SELECT dni FROM Alumno WHERE dni = '$dni';";
+    if($res = mysqli_query($con, $query)) // si la monarquia española ataca aka si no hay error
+    {
+        if(mysqli_num_rows($res)) // si existe el alumno
+        {
+            desconectar($con);
+            return 1;
+        }
+        else
+        {
+            desconectar($con);
+            return 0;
+        }
+    }
+    else
+    {
+        desconectar($con);
+        errorConsulta();
+    }
+}
+
+function alumnoIsInCurso($dni, $code)
+{
+    $con = conectar("edm");
+    $query = "SELECT * FROM Inscrito WHERE dni = '$dni' AND id_curso = $code;";
+    if($res = mysqli_query($con, $query)) // si la monarquia española ataca aka si no hay error
+    {
+        if(mysqli_num_rows($res)) // si el alumno está inscrito en el curso
         {
             desconectar($con);
             return 1;

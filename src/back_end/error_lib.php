@@ -9,7 +9,7 @@ require_once "print_lib.php";
 /**********ERRORES COMUNES DE USUARIO************/
 function errorInsertarAlumno()
 {
-    $message = "Error insertant alumne: comprova que el DNI no sigui duplicat";
+    $message = "Error insertant alumne: ja està inscrit al curs";
     echo "<script type='text/javascript'>
     alert('$message');
     window.location = '../front_end/alta_alumno.php';
