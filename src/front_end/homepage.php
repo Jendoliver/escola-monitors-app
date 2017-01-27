@@ -25,7 +25,7 @@
         <div class="row"> <!-- Título sección -->
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <h1>GESTIÓ DE L'ESCOLA DE MONITORS</h1>
+                <h1><em>Pàgina principal</em></h1>
             </div>
             <div class="col-md-4"></div>
         </div>
