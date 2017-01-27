@@ -1,6 +1,6 @@
 function nom()
 {
-    document.getElementById("datainput").innerHTML = "<input type='text' name='nom' placeholder='Nom' required> <input type='text' name='cog1' placeholder='Primer cognom' required> <input type='text' name='cog2' placeholder='Segon cognom'>";
+    document.getElementById("datainput").innerHTML = "<input type='text' name='nom' value='' placeholder='Nom'> <input type='text' name='cog1' value='' placeholder='Primer cognom'> <input type='text' name='cog2' value='' placeholder='Segon cognom'>";
 }
 
 function email()

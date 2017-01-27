@@ -17,8 +17,8 @@
         <nav>
             <ul>
                 <li><a href="crearcurso.php">Crear un curs</a>
-                <li><a href="buscarcurso.php">Cercar/gestionar un curs</a>
                 <li><a href="alta_alumno.php">Donar d'alta alumne a curs</a>
+                <li><a href="buscarcurso.php">Cercar/gestionar un curs</a>
             </ul>
         </nav>
     </div>

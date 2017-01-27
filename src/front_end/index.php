@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Autentificació de l'administrador</title>
     <script src="../js/jquery-3.1.1.min.js" type="text/javascript"></script>
-        <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <script src="../css/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <script src="../css/bootstrap/js/bootstrap.js" type="text/javascript"></script>
 </head>
 </head>
 <body>

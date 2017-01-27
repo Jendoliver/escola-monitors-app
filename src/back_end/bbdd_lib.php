@@ -283,8 +283,39 @@ function showCursos($tipo, $mod, $date) // PROCEDIMIENTO QUE MUESTRA UNO O VARIO
 
 function showAlumnoByNom($nom, $cog1, $cog2) // TODO
 {
+    $where = " WHERE ";
+    $restric = false;
+    if($nom != "")
+    {
+        $where .= "nombre = $nom";
+        $restric = true;
+    }
+    if($cog1 != "")
+    {
+        if($restric) // si no es la primera restricción añadimos el AND, sino igual
+            $where .= " AND ape1 = '$cog1'";
+        else
+        {
+            $where .= "ape1 = '$cog1'";
+            $restric = true;
+        }
+    }
+    if($cog2 != "ANY")
+    {
+        if($restric)
+            $where .= " AND ape2 = '$cog2'";
+        else
+        {
+            $where .= "ape2 = '$cog2'";
+            $restric = true;
+        }
+    }
+    $where .= ";";
+    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno";
+    if($restric)
+        $select .= $where;
+        
     $con = conectar("edm");
-    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno WHERE nombre = '$nom' and ape1 = '$cog1' and ape2 = '$cog2';";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
