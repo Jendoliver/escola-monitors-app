@@ -465,7 +465,7 @@ function showAlumnoByTel($tel)
 function showAlumnosCurso($code)
 {
     $con = conectar("edm");
-    $select = "SELECT * FROM Alumno INNER JOIN Inscrito ON Alumno.dni = Inscrito.dni WHERE Inscrito.id_curso = $code";
+    $select = "SELECT Alumno.dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno INNER JOIN Inscrito ON Alumno.dni = Inscrito.dni WHERE Inscrito.id_curso = $code";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -475,6 +475,7 @@ function showAlumnosCurso($code)
     }
     else
     {
+        echo mysqli_error($con);
         errorConsulta();
         desconectar($con);
         printBackButton();

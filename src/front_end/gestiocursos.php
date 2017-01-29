@@ -62,7 +62,7 @@
         		    	</div>
 				        <div class="modal-footer">
                             <div>
-                                <form action="alta_alumno.php" method="POST"><button type="submit" class="btn btn-primary btn-lg btn-block">Inscriure nou alumne</button></form>
+                                <form action="alta_alumno.php" method="POST"><button type="submit" class="btn btn-primary btn-lg btn-block">Inscriure alumne a curs</button></form>
                             </div>
 				        </div>
                     </div>

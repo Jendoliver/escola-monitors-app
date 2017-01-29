@@ -103,3 +103,13 @@
 [27-Jan-2017 02:02:35 UTC] PHP   2. insertarAlumno() /home/ubuntu/workspace/src/back_end/insertor.php:26
 [27-Jan-2017 02:02:35 UTC] PHP   3. desconectar() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:114
 [27-Jan-2017 02:02:35 UTC] PHP   4. mysqli_close() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:22
+[29-Jan-2017 23:34:24 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 478
+[29-Jan-2017 23:34:24 UTC] PHP Stack trace:
+[29-Jan-2017 23:34:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/modificardatos.php:0
+[29-Jan-2017 23:34:24 UTC] PHP   2. showAlumnosCurso() /home/ubuntu/workspace/src/front_end/modificardatos.php:35
+[29-Jan-2017 23:34:24 UTC] PHP   3. mysqli_error() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:478
+[29-Jan-2017 23:35:13 UTC] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 478
+[29-Jan-2017 23:35:13 UTC] PHP Stack trace:
+[29-Jan-2017 23:35:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/modificardatos.php:0
+[29-Jan-2017 23:35:13 UTC] PHP   2. showAlumnosCurso() /home/ubuntu/workspace/src/front_end/modificardatos.php:35
+[29-Jan-2017 23:35:13 UTC] PHP   3. mysqli_error() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:478
