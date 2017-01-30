@@ -113,3 +113,7 @@
 [29-Jan-2017 23:35:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/modificardatos.php:0
 [29-Jan-2017 23:35:13 UTC] PHP   2. showAlumnosCurso() /home/ubuntu/workspace/src/front_end/modificardatos.php:35
 [29-Jan-2017 23:35:13 UTC] PHP   3. mysqli_error() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:478
+[30-Jan-2017 23:41:33 UTC] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/ubuntu/workspace/src/front_end/logout.php on line 3
+[30-Jan-2017 23:41:33 UTC] PHP Stack trace:
+[30-Jan-2017 23:41:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/front_end/logout.php:0
+[30-Jan-2017 23:41:33 UTC] PHP   2. session_destroy() /home/ubuntu/workspace/src/front_end/logout.php:3

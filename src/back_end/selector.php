@@ -8,6 +8,11 @@
     <script src="../css/bootstrap/js/bootstrap.js" type="text/javascript"></script>
 </head>
 <body>
+    <?php
+    if(!auth())
+        errorNotLogged();
+    else
+    { ?>
     <div class="container-fluid">
         <div class="row"> <!-- Imagen -->
             <div class="col-md-4"></div>
@@ -101,6 +106,7 @@
                 errorSelector();
             ?>  
         </div> <!-- end row -->
-    </div>    
+    </div>
+    <?php } ?>
 </body>
 </html>

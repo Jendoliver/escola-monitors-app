@@ -20,7 +20,16 @@
             <div class="col-md-4">
                 <header><img src="img/escolamonitorslogo.png" class="img-responsive center"></img></header>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <div class="row"><br><br></div>
+                    <div class="row">
+                        <a href="logout.php" class="btn btn-danger btn-md btn-block">Tancar sessió</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row"> <!-- Título sección -->
             <div class="col-md-4"></div>
