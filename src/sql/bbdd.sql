@@ -28,10 +28,10 @@ email varchar(100),
 calificacion_teoria tinyint DEFAULT 0, -- 0: Sin calificar, 1: Pendiente, 2: Aprobado, 3: No aprobado
 calificacion_practicas tinyint DEFAULT 0, -- 0: Sin calificar, 1: Pendiente, 2: Aprobado, 3: No aprobado
 dinero_debido int DEFAULT 0, -- La pasta que debe un alumno
-fecha_memoria date DEFAULT NULL, -- La fecha de convocatoria en la que un alumno entrega la memoria
+fecha_memoria date DEFAULT '0000-00-00', -- La fecha de convocatoria en la que un alumno entrega la memoria
 memoria bool DEFAULT 0, -- 0=No entregada, 1=Entregada
 aprobado tinyint DEFAULT 0, -- 0=Pendiente, 1=No apto, 2=Apto
-num_titulo int DEFAULT NULL -- El numero de titulo una vez aprobado
+num_titulo int DEFAULT 0 -- El numero de titulo una vez aprobado
 ) DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS Inscrito(

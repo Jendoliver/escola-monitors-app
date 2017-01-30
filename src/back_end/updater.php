@@ -15,7 +15,7 @@ else if(isset($_POST["personal"]))
 else if(isset($_POST["expedient"]))
 {
     extract($_POST);
-    updateAlumnoExpedient($dni, $teorica, $practica, $convocatoria, $memoria, $aprovat);
+    updateAlumnoExpedient($dni, $teorica, $practica, $convocatoria, $memoria, $aprovat, $numtitol);
 }
 else if(isset($_POST["deutes"]))
 {

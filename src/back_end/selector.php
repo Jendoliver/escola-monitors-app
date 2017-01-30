@@ -17,14 +17,15 @@
             <div class="col-md-4"></div>
         </div>
         <div class="row"> <!-- Tabla según de donde se venga -->
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="container">
-                    <?php
-                    require_once "bbdd_lib.php";
-                    
-                    if(isset($_POST["codi_curs"])) // VENIMOS DE buscarcurso.php CON CÓDIGO DE CURSO
-                    {
+            <?php
+            require_once "bbdd_lib.php";
+            
+            if(isset($_POST["codi_curs"])) // VENIMOS DE buscarcurso.php CON CÓDIGO DE CURSO
+            { ?>
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="container">
+                        <?php
                         $code = $_POST["codi_curs"];
                         if(cursoExists($code)) // comprobamos que el curso existe
                         {
@@ -32,46 +33,73 @@
                         }
                         else
                             errorCursoNoExiste();
-                    }
-                    
-                    else if(isset($_POST["tipus_curs"])) // VENIMOS DE buscarcurso.php CON OPCIONES MÚLTIPLES
-                    {
+                        ?>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            <?php            
+            }
+            
+            else if(isset($_POST["tipus_curs"])) // VENIMOS DE buscarcurso.php CON OPCIONES MÚLTIPLES
+            { ?>
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="container">
+                        <?php
                         extract($_POST);
                         showCursos($tipus_curs, $modalitat_curs, $data_curs);
-                    }
-                    
-                    else if(isset($_POST["data"]) || isset($_POST["nom"])) // VENIMOS DE gestioalumnes.php pa buscar un alumno en kokreta
-                    {
-                        extract($_POST); //heckiar el tipo de dato
-                        switch($tipo)
-                        {
-                            case "nom": showAlumnoByNom($nom, $cog1, $cog2); break;
-                            case "email": showAlumnoByEmail($data); break;
-                            case "dni": showAlumnoByDNI($data); break;
-                            case "tel": showAlumnoByTel($data); break;
-                            default: errorSelector();
-                        }
-                    }
-                    
-                    else if(isset($_POST["morosos"])) // VENIMOS DE gestioalumnes.php, listar morosos.
-                    {
-                        showMorosos();
-                    }
-                    
-                    else if(isset($_POST["aprobados"])) // mostrar listado aprobados
-                    {
-                        showAprobados();
-                    }
-                    else if(isset($_POST["back"])) // solucion cutre del bug boton patras
-                    {
-                        header('Location: ../front_end/homepage.php');
-                    }
-                    else
-                        errorSelector();
-                    ?>  
+                        ?>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
+            <?php
+            }
+            
+            else if(isset($_POST["data"]) || isset($_POST["nom"])) // VENIMOS DE gestioalumnes.php pa buscar un alumno en kokreta
+            { ?>
+                <div class="col">
+                    <?php
+                    extract($_POST); //heckiar el tipo de dato
+                    switch($tipo)
+                    {
+                        case "nom": showAlumnoByNom($nom, $cog1, $cog2); break;
+                        case "email": showAlumnoByEmail($data); break;
+                        case "dni": showAlumnoByDNI($data); break;
+                        case "tel": showAlumnoByTel($data); break;
+                        default: errorSelector();
+                    } ?>
+                </div>
+            <?php            
+            }
+            
+            else if(isset($_POST["morosos"])) // VENIMOS DE gestioalumnes.php, listar morosos.
+            { ?>
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="container">
+                        <?php
+                        showMorosos();
+                        ?>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            <?php
+            }
+            
+            else if(isset($_POST["aprobados"])) // mostrar listado aprobados
+            { ?>
+                <div class="col"> <?php
+                    showAprobados(); ?>
+                </div>
+            <?php
+            }
+            else if(isset($_POST["back"])) // solucion cutre del bug boton patras
+            {
+                header('Location: ../front_end/homepage.php');
+            }
+            else
+                errorSelector();
+            ?>  
         </div> <!-- end row -->
     </div>    
 </body>

@@ -173,10 +173,10 @@ function updateAlumnoPersonal($dni, $nom, $cog1, $cog2, $dnaix, $dir, $tel, $ema
     }
 }
 
-function updateAlumnoExpedient($dni, $teorica, $practica, $convocatoria, $memoria, $aprovat)
+function updateAlumnoExpedient($dni, $teorica, $practica, $convocatoria, $memoria, $aprovat, $numtitol)
 {
     $con = conectar("edm");
-    $update = "UPDATE Alumno SET calificacion_teoria = $teorica, calificacion_practicas = $practica, fecha_memoria = '$convocatoria', memoria = $memoria, aprobado = $aprovat WHERE dni = '$dni';";
+    $update = "UPDATE Alumno SET calificacion_teoria = $teorica, calificacion_practicas = $practica, fecha_memoria = '$convocatoria', memoria = $memoria, aprobado = $aprovat, num_titulo = $numtitol WHERE dni = '$dni';";
     if(mysqli_query($con, $update))
     {
         desconectar($con);
@@ -184,6 +184,7 @@ function updateAlumnoExpedient($dni, $teorica, $practica, $convocatoria, $memori
     }
     else
     {
+        echo mysqli_error($con);
         desconectar($con);
         errorConsulta();
     }
@@ -357,7 +358,7 @@ function showAlumnoByNom($nom, $cog1, $cog2) // TODO
     $restric = false;
     if($nom != "")
     {
-        $where .= "nombre = $nom";
+        $where .= "nombre = '$nom'";
         $restric = true;
     }
     if($cog1 != "")
@@ -370,7 +371,7 @@ function showAlumnoByNom($nom, $cog1, $cog2) // TODO
             $restric = true;
         }
     }
-    if($cog2 != "ANY")
+    if($cog2 != "")
     {
         if($restric)
             $where .= " AND ape2 = '$cog2'";
@@ -616,6 +617,13 @@ function createTableAlumnos($con, $res)
                         default: errorCreateTable();
                     }
                 }
+                else if($i == 11) // data convocatoria
+                {
+                    if($value == "0000-00-00")
+                        $table .= "<td>Sense especificar</td>";
+                    else
+                        $table .= "<td>$value</td>";
+                }
                 else if($i == 12) // estado memoria
                 {
                     switch($value)
@@ -634,6 +642,13 @@ function createTableAlumnos($con, $res)
                         case 2: $table .= "<td>Apte</td>"; break;
                         default: errorCreateTable();
                     }
+                }
+                else if($i == 14) // numero titulo
+                {
+                    if($value)
+                        $table .= "<td>$value</td>";
+                    else
+                        $table .= "<td>Sense títol</td>";
                 }
                 else
                     $table .= "<td>$value</td>";

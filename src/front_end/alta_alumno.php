@@ -47,13 +47,13 @@
                                     <div id="mod_curs-msg" class="glyphicon glyphicon-chevron-right"></div>
                                     <span id="mod_curs-msg">Dades personals:</span>
                                 </div>
-    				    		<input class="form-control" type="text" name="dni_alumne" placeholder="DNI de l'alumne" required>
+    				    		<input class="form-control" type="text" name="dni_alumne" maxlength="9" placeholder="DNI de l'alumne" required>
     				    		<input class="form-control" type="text" maxlength="30" name="nom" placeholder="Nom" required>
     				    		<input class="form-control" type="text" maxlength="30" name="cognom1" placeholder="Primer cognom" required>
     				    		<input class="form-control" type="text" maxlength="30" name="cognom2" placeholder="Segon cognom">
-    				    		<input class="form-control" type="text" name="direccio" placeholder="Direcció">
-    				    		<input class="form-control" type="text" minlength="9" name="telefon" placeholder="Telèfon">
-    				    		<input class="form-control" type="email" name="email_alumne" placeholder="Email"><br>
+    				    		<input class="form-control" type="text" maxlength="100" name="direccio" placeholder="Direcció">
+    				    		<input class="form-control" type="text" minlength="9" maxlength="15" name="telefon" placeholder="Telèfon">
+    				    		<input class="form-control" type="email" maxlength="100" name="email_alumne" placeholder="Email"><br>
     				    		<div id="mod_curs">
                                     <div id="mod_curs-msg" class="glyphicon glyphicon-chevron-right"></div>
                                     <span id="mod_curs-msg">Data de naixement:</span>

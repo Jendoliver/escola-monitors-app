@@ -68,7 +68,7 @@
                                     <div id="date_end-msg" class="glyphicon glyphicon-chevron-right"></div>
                                     <span id="date_end-msg">Lloc on es realitza el curs:</span>
                                 </div>
-                                <input class="form-control" type="text" name="lugar"><br>
+                                <input class="form-control" type="text" maxlength="50" name="lugar"><br>
                                 <div id="date_end">
                                     <div id="date_end-msg" class="glyphicon glyphicon-chevron-right"></div>
                                     <span id="date_end-msg">Preu del curs:</span>
