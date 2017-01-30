@@ -59,12 +59,12 @@
                                     <span id="mod_curs-msg">Data de naixement:</span>
                                 </div>
                                 <input class="form-control" type="date" name="data_naixement">
-    				    		<div class="modal-footer">
-                                    <div>
-                                        <button type="submit" class="btn btn-success btn-lg btn-block">Alta alumne</button>
-                                    </div>
-    				            </div>
-    				        </div>
+                            </div>
+				    		<div class="modal-footer">
+                                <div>
+                                    <button type="submit" class="btn btn-success btn-lg btn-block">Alta alumne</button>
+                                </div>
+				            </div>
                         </form>
                     </div>
                 </div>
