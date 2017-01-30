@@ -2,7 +2,7 @@
 /*
 *
 * bbdd_lib.php: LIBRERÍA DE FUNCIONES Y PROCEDIMIENTOS CORRESPONDIENTES A LAS CONSULTAS A LA BASE DE DATOS
-*   Autor: Jhen D'Òliver et a ver si un Magners se lo firma pero si me hace algun JS dile ahi pohohohoho
+*   Autor: Jhen D'Òliver
 */
 
 require_once "error_lib.php";

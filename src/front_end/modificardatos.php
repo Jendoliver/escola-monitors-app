@@ -31,6 +31,7 @@
                         <div class="main-container panel-body">
                             <form action="../back_end/updater.php" method="POST">
         		                <div class="modal-body">
+        		                    <input type="hidden" name="code" value="<?php echo $code?>">
         				    		<div id="tipus_curs">
                                         <div id="tipus_curs-msg" class="glyphicon glyphicon-chevron-right"></div>
                                         <span id="tipus_curs-msg">Tipus del curs:</span>
