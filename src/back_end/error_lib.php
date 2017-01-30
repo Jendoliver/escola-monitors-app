@@ -78,3 +78,8 @@ function errorCrearCurso()
 {
     echo "<h1>ERROR CREANT EL CURS: CONTACTA AMB EL TEU PROGRAMADOR</h1>";
 }
+
+function errorCreateTable()
+{
+    echo "<h1>ERROR EN LA FUNCIÓ CREATE TABLE: CONTACTA AMB EL TEU PROGRAMADOR</h1>";
+}

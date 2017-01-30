@@ -1,2 +1,1 @@
-- Gestionar salida de tablas (transformas tipus de curs numerico en nombre, igual con modalidad, estado aprobado etc.)
 - Añadir JavaScript en alta alumno por si el alumno ya existe no tener q introducir todos los datos otra vez

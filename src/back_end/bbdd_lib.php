@@ -381,7 +381,7 @@ function showAlumnoByNom($nom, $cog1, $cog2) // TODO
         }
     }
     $where .= ";";
-    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno";
+    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teòrica', calificacion_practicas as 'Qualif. part pràctica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatòria', memoria as 'Memòria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de títol' FROM Alumno";
     if($restric)
         $select .= $where;
         
@@ -405,7 +405,7 @@ function showAlumnoByNom($nom, $cog1, $cog2) // TODO
 function showAlumnoByEmail($email)
 {
     $con = conectar("edm");
-    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno WHERE email = '$email';";
+    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teòrica', calificacion_practicas as 'Qualif. part pràctica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatòria', memoria as 'Memòria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de títol' FROM Alumno WHERE email = '$email';";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -425,7 +425,7 @@ function showAlumnoByEmail($email)
 function showAlumnoByDNI($dni)
 {
     $con = conectar("edm");
-    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno WHERE dni = '$dni';";
+    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teòrica', calificacion_practicas as 'Qualif. part pràctica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatòria', memoria as 'Memòria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de títol' FROM Alumno WHERE dni = '$dni';";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -445,7 +445,7 @@ function showAlumnoByDNI($dni)
 function showAlumnoByTel($tel)
 {
     $con = conectar("edm");
-    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno WHERE telefono = '$tel';";
+    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teòrica', calificacion_practicas as 'Qualif. part pràctica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatòria', memoria as 'Memòria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de títol' FROM Alumno WHERE telefono = '$tel';";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -465,7 +465,7 @@ function showAlumnoByTel($tel)
 function showAlumnosCurso($code)
 {
     $con = conectar("edm");
-    $select = "SELECT Alumno.dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno INNER JOIN Inscrito ON Alumno.dni = Inscrito.dni WHERE Inscrito.id_curso = $code";
+    $select = "SELECT Alumno.dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teòrica', calificacion_practicas as 'Qualif. part pràctica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatòria', memoria as 'Memòria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de títol' FROM Alumno INNER JOIN Inscrito ON Alumno.dni = Inscrito.dni WHERE Inscrito.id_curso = $code";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -506,7 +506,7 @@ function showMorosos()
 function showAprobados()
 {
     $con = conectar("edm");
-    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teorica', calificacion_practicas as 'Qualif. part practica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatoria', memoria as 'Memoria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de titol' FROM Alumno WHERE aprobado = 2;";
+    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teòrica', calificacion_practicas as 'Qualif. part pràctica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatòria', memoria as 'Memòria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de títol' FROM Alumno WHERE aprobado = 2;";
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -537,14 +537,40 @@ function createTableCursos($con, $res) // $con = conexion bbdd, $res = resultado
     
         do // llenar tabla con el contenido de la query
         {
+            $i = 0;
             $table .= "<tr>"; // principio de fila
             foreach($row as $key => $value) // llenamos una fila
             {
-                if($key == "Codi de curs") // pillamos la primary para lanzar el modify sobre eso
+                if($i == 0) // pillamos la primary para lanzar el modify sobre eso
                 {    
                     $idcurso = $value;
+                    $table .= "<td>$value</td>";
                 }
-                $table .= "<td>$value</td>";
+                else if($i == 1)
+                {
+                    switch($value)
+                    {
+                        case 0: $table .= "<td>Monitor</td>"; break;
+                        case 1: $table .= "<td>Director</td>"; break;
+                        case 2: $table .= "<td>Premonitor</td>"; break;
+                        case 3: $table .= "<td>Altres</td>"; break;
+                        default: errorCreateTable();
+                    }
+                }
+                else if($i == 2)
+                {
+                    switch($value)
+                    {
+                        case 0: $table .= "<td>Matí</td>"; break;
+                        case 1: $table .= "<td>Tarda</td>"; break;
+                        case 2: $table .= "<td>Cap de setmana</td>"; break;
+                        case 3: $table .= "<td>Intensiu</td>"; break;
+                        default: errorCreateTable();
+                    }
+                }
+                else
+                    $table .= "<td>$value</td>";
+                $i++;
             }
             $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='idcurso' value='$idcurso'><input type='submit' class='btn btn-info btn-sm' name='curso' value='MODIFICAR'></form></td>"; // botón de modificar
             $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='idcurso' value='$idcurso'><input type='submit' class='btn btn-info btn-sm' name='alumnos' value='MOSTRAR'></form></td>";
@@ -570,14 +596,48 @@ function createTableAlumnos($con, $res)
         $table .= "<th>Modificar dades personals</th><th>Modificar expedient</th><th>Modificar deutes</th></thead><tbody>"; // columna de botón modificar, cierre del header y apertura del body
         do // llenar tabla con el contenido de la query
         {
+            $i = 0;
             $table .= "<tr>"; // principio de fila
             foreach($row as $key => $value) // llenamos una fila
             {
-                if($key == "DNI") // pillamos la primary para lanzar el modify sobre eso
+                if($i == 0) // pillamos la primary para lanzar el modify sobre eso
                 {
                     $dni = $value;
+                    $table .= "<td>$value</td>";
                 }
-                $table .= "<td>$value</td>";
+                else if($i == 8 || $i == 9) // calificacion_teoria o practica
+                {
+                    switch($value)
+                    {
+                        case 0: $table .= "<td>Sense qualificar</td>"; break;
+                        case 1: $table .= "<td>Pendent de qualificar</td>"; break;
+                        case 2: $table .= "<td>Aprovat</td>"; break;
+                        case 3: $table .= "<td>Suspes</td>"; break;
+                        default: errorCreateTable();
+                    }
+                }
+                else if($i == 12) // estado memoria
+                {
+                    switch($value)
+                    {
+                        case 0: $table .= "<td>No entregada</td>"; break;
+                        case 1: $table .= "<td>Entregada</td>"; break;
+                        default: errorCreateTable();
+                    }
+                }
+                else if($i == 13) // aprobado
+                {
+                    switch($value)
+                    {
+                        case 0: $table .= "<td>Pendent</td>"; break;
+                        case 1: $table .= "<td>No apte</td>"; break;
+                        case 2: $table .= "<td>Apte</td>"; break;
+                        default: errorCreateTable();
+                    }
+                }
+                else
+                    $table .= "<td>$value</td>";
+                $i++;
             }
             $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' class='btn btn-info btn-sm' name='personal' value='MODIFICAR'></form></td>";
             $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' class='btn btn-info btn-sm' name='expedient' value='MODIFICAR'></form></td>";// botón de modificar
