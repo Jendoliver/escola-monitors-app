@@ -61,7 +61,7 @@ function insertarCurso($tipo, $mod, $fecha_ini, $fecha_fin, $lugar, $precio) // 
 {
     $code = createCode();
     $conexion = conectar("edm");
-    $insert = "INSERT INTO Curso(`id_curso`, `tipo_curso`, `modalidad`, `fecha_ini`, `fecha_fin`, `lugar`, `precio`) VALUES($code, $tipo, '$mod', '$fecha_ini', '$fecha_fin', '$lugar', $precio);";
+    $insert = "INSERT INTO Curso(`id_curso`, `tipo_curso`, `modalidad`, `fecha_ini`, `fecha_fin`, `lugar`, `precio`) VALUES($code, $tipo, $mod, '$fecha_ini', '$fecha_fin', '$lugar', $precio);";
     if(mysqli_query($conexion, $insert))
     {
         desconectar($conexion);
@@ -144,7 +144,7 @@ function createCode() // FUNCIÓN QUE DEVUELVE UN CÓDIGO DE CURSO NUEVO
 function updateCurso($code, $tipo, $mod, $fecha_ini, $fecha_fin, $lugar, $precio)
 {
     $con = conectar("edm");
-    $update = "UPDATE Curso SET tipo_curso = $tipo, modalidad = '$mod', fecha_ini = '$fecha_ini', fecha_fin = '$fecha_fin', lugar = '$lugar', precio = $precio WHERE id_curso = $code;";
+    $update = "UPDATE Curso SET tipo_curso = $tipo, modalidad = $mod, fecha_ini = '$fecha_ini', fecha_fin = '$fecha_fin', lugar = '$lugar', precio = $precio WHERE id_curso = $code;";
     if(mysqli_query($con, $update))
     {
         desconectar($con);
@@ -527,7 +527,7 @@ function createTableCursos($con, $res) // $con = conexion bbdd, $res = resultado
 {
     if($row = mysqli_fetch_assoc($res)) //comprobamos que hay algo para evitar warning
     {
-        $table = "<table border=2px>";
+        $table = "<table class='table table-hover'>"; // ese bootstrap joder
         $table .= "<thead>";
         foreach($row as $key => $value) // header tabla
         {
@@ -546,8 +546,8 @@ function createTableCursos($con, $res) // $con = conexion bbdd, $res = resultado
                 }
                 $table .= "<td>$value</td>";
             }
-            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='idcurso' value='$idcurso'><input type='submit' name='curso' value='MODIFICAR'></form></td>"; // botón de modificar
-            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='idcurso' value='$idcurso'><input type='submit' name='alumnos' value='MOSTRAR'></form></td>";
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='idcurso' value='$idcurso'><input type='submit' class='btn btn-info btn-sm' name='curso' value='MODIFICAR'></form></td>"; // botón de modificar
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='idcurso' value='$idcurso'><input type='submit' class='btn btn-info btn-sm' name='alumnos' value='MOSTRAR'></form></td>";
             $table .= "</tr>";
         } while ($row = mysqli_fetch_assoc($res));
         $table .= "</tbody></table>";
@@ -561,7 +561,7 @@ function createTableAlumnos($con, $res)
 {
     if($row = mysqli_fetch_assoc($res)) // checkiamos que hay resultados
     {
-        $table = "<table border=2px>";
+        $table = "<table class='table table-hover'>";
         $table .= "<thead>";
         foreach($row as $key => $value) // header tabla
         {
@@ -579,9 +579,9 @@ function createTableAlumnos($con, $res)
                 }
                 $table .= "<td>$value</td>";
             }
-            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' name='personal' value='MODIFICAR'></form></td>";
-            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' name='expedient' value='MODIFICAR'></form></td>";// botón de modificar
-            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' name='deutes' value='MODIFICAR'></form></td>";
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' class='btn btn-info btn-sm' name='personal' value='MODIFICAR'></form></td>";
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' class='btn btn-info btn-sm' name='expedient' value='MODIFICAR'></form></td>";// botón de modificar
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' class='btn btn-info btn-sm' name='deutes' value='MODIFICAR'></form></td>";
             $table .= "</tr>";
         } while ($row = mysqli_fetch_assoc($res));
         $table .= "</tbody></table>";

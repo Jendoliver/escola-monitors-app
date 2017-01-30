@@ -44,7 +44,7 @@
         		    	</div>
 				        <div class="modal-footer">
                             <div>
-                                <form id="login-form" action="gestioalumnes.php" method="POST"><button type="submit" class="btn btn-primary btn-lg btn-block">Gestionar alumnes</button></form>
+                                <a href="gestioalumnes.php" class="btn btn-primary btn-lg btn-block">Gestionar alumnes</a>
                             </div>
 				        </div>
                     </div>
@@ -63,7 +63,7 @@
         		    	</div>
 				        <div class="modal-footer">
                             <div>
-                                <form id="login-form" action="gestiocursos.php" method="POST"><button type="submit" class="btn btn-primary btn-lg btn-block">Gestionar cursos</button></form>
+                                <a href="gestiocursos.php" class="btn btn-primary btn-lg btn-block">Gestionar cursos</a>
                             </div>
 				        </div>
                     </div>

@@ -44,7 +44,7 @@
         		    	</div>
 				        <div class="modal-footer">
                             <div>
-                                <form action="crearcurso.php" method="POST"><button type="submit" class="btn btn-primary btn-lg btn-block">Crear nou curs</button></form>
+                                <a href="crearcurso.php" class="btn btn-primary btn-lg btn-block">Crear nou curs</a>
                             </div>
 				        </div>
                     </div>
@@ -62,7 +62,7 @@
         		    	</div>
 				        <div class="modal-footer">
                             <div>
-                                <form action="alta_alumno.php" method="POST"><button type="submit" class="btn btn-primary btn-lg btn-block">Inscriure alumne a curs</button></form>
+                                <a href="alta_alumno.php" class="btn btn-primary btn-lg btn-block">Inscriure alumne a curs</a>
                             </div>
 				        </div>
                     </div>
@@ -80,7 +80,7 @@
         		    	</div>
 				        <div class="modal-footer">
                             <div>
-                                <form action="buscarcurso.php" method="POST"><button type="submit" class="btn btn-primary btn-lg btn-block">Gestionar cursos</button></form>
+                                <a href="buscarcurso.php" class="btn btn-primary btn-lg btn-block">Cercar cursos</a>
                             </div>
 				        </div>
                     </div>

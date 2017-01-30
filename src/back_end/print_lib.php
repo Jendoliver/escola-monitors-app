@@ -8,12 +8,12 @@
 function printBackButton()
 {
     $url = htmlspecialchars($_SERVER['HTTP_REFERER']); 
-    echo "<form action='$url' method='POST'><input type='submit' name='back' value='Torna enrere'></form>"; 
+    echo "<form action='$url' method='POST'><input type='submit' class='btn btn-primary btn-sm' name='back' value='Torna enrere'></form><br>"; 
 }
 
 function printHomeButton()
 {
-    echo "<form action='../front_end/homepage.php' method='POST'><input type='submit' value='Torna a la pàgina principal'></form>";
+    echo "<form action='../front_end/homepage.php' method='POST'><input type='submit' class='btn btn-primary btn-sm' value='Torna a la pàgina principal'></form>";
 }
 
 function mostrarCodigo($codigo) // PROCEDIMIENTO QUE MUESTRA EL CÓDIGO DE CURSO RECIÉN CREADO

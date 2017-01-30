@@ -9,7 +9,7 @@ password varchar(10) NOT NULL
 CREATE TABLE IF NOT EXISTS Curso(
 id_curso int PRIMARY KEY,
 tipo_curso tinyint NOT NULL, -- 0=Monitor, 1=Director, 2=Premonitor, 3=Otros
-modalidad varchar(10) NOT NULL, -- mati, tarda, finde, intensiu
+modalidad tinyint NOT NULL, -- 0=mati, 1=tarda, 2=finde, 3=intensiu
 fecha_ini date NOT NULL,
 fecha_fin date NOT NULL,
 lugar varchar(50), -- lloc on es fa el curs

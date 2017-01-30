@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Cerca i gestió de cursos</title>
+    <script src="../js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <script src="../css/bootstrap/js/bootstrap.js" type="text/javascript"></script>
 </head>
 <body>
     <?php 
@@ -11,22 +14,88 @@
         errorNotLogged();
     else
     { ?>
-    <header><a href="homepage.php"><img src="img/escolamonitorslogo.png"></img></a></header>
-    <h1>Cerca de cursos</h1>
-    <div class="main-container">
-        Cercar un únic curs mitjançant el seu codi:
-        <form action="../back_end/selector.php" method="POST">
-            Codi de curs: <input type="number" min="1" name="codi_curs"><br>
-            <input type="submit" value="CERCA">
-        </form><br><br>
-        
-        Cercar diversos cursos mitjançant tipus, modalitat i data d'inici del curs:
-        <form action="../back_end/selector.php" method="POST">
-            Tipus de curs: <input type=radio name="tipus_curs" value="M" required> Monitor <input type=radio name="tipus_curs" value="D" required> Director <input type=radio name="tipus_curs" value="ANY" checked required> Qualsevol<br>
-            Modalitat: <input type=radio name="modalitat_curs" value="mati" required> Matí <input type=radio name="modalitat_curs" value="tarda" required> Tarda <input type=radio name="modalitat_curs" value="finde" required> Cap de setmana <input type=radio name="modalitat_curs" value="intensiu" required> Intensiu <input type=radio name="modalitat_curs" value="ANY" checked required> Qualsevol<br>
-            Data d'inici del curs: <input type="date" name="data_curs"> <input type="radio" name="data_curs" value="ANY"> Qualsevol<br>
-            <input type="submit" value="CERCA">
-        </form>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <header><a href="homepage.php"><img src="img/escolamonitorslogo.png" class="img-responsive center"></img></a></header>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row"> <!-- Título sección -->
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h1><em>Cerca de cursos</em></h1>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row"><br><br></div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <div class="panel panel-default"> <!-- Buscar un curs en concret -->
+                    <div class="panel-heading"><h3>Cercar un únic curs mitjançant el seu codi</h3></div>
+                    <div class="main-container panel-body">
+                        <form action="../back_end/selector.php" method="POST"> <!-- Formulari de cerca -->
+        	                <div class="modal-body">
+        			    		<div id="div-login-msg">
+                                    <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                    <span id="text-login-msg">Codi de curs:</span>
+                                </div>
+                                <input class="form-control" type="number" min="1" name="codi_curs">
+                            </div>
+        			        <div class="modal-footer">
+                                <div>
+                                    <button type="submit" class="btn btn-success btn-lg btn-block">Cercar curs</button>
+                                </div>
+        			        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <div class="panel panel-default"> <!-- Buscar diversos cursos -->
+                    <div class="panel-heading"><h3>Cercar diversos cursos</h3></div>
+                    <div class="main-container panel-body">
+                        <form action="../back_end/selector.php" method="POST">
+                            <div class="modal-body">
+                                <div id="tipus_curs">
+                                    <div id="tipus_curs-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                    <span id="tipus_curs-msg">Tipus del curs:</span>
+                                </div>
+            		    		<label class="radio-inline"><input type="radio" name="tipus_curs" value="0" required>Monitor</label>
+            		    		<label class="radio-inline"><input type="radio" name="tipus_curs" value="1" required>Director</label>
+            		    		<label class="radio-inline"><input type="radio" name="tipus_curs" value="2" required>Premonitor</label>
+            		    		<label class="radio-inline"><input type="radio" name="tipus_curs" value="3" required>Altres</label>
+            		    		<label class="radio-inline"><input type="radio" name="tipus_curs" value="ANY" checked required>Qualsevol</label><br><br>
+            		    		<div id="mod_curs">
+                                    <div id="mod_curs-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                    <span id="mod_curs-msg">Modalitat del curs:</span>
+                                </div>
+                                <label class="radio-inline"><input type="radio" name="modalitat_curs" value="0" required>Matí</label>
+            		    		<label class="radio-inline"><input type="radio" name="modalitat_curs" value="1" required>Tarda</label>
+            		    		<label class="radio-inline"><input type="radio" name="modalitat_curs" value="2" required>Finde</label>
+            		    		<label class="radio-inline"><input type="radio" name="modalitat_curs" value="3" required>Intensiu</label>
+            		    		<label class="radio-inline"><input type="radio" name="modalitat_curs" value="ANY" checked required>Qualsevol</label><br><br>
+            		    		<div id="date">
+                                    <div id="date-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                    <span id="date-msg">Data d'inici del curs:</span>
+                                </div>
+                                <input class="form-control" type="date" name="data_curs">
+                                <input type="radio" name="data_curs" value="ANY"> Qualsevol
+                            </div>
+                            <div class="modal-footer">
+                                <div>
+                                    <button type="submit" class="btn btn-success btn-lg btn-block">Cercar cursos</button>
+                                </div>
+        			        </div>
+        			    </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
     </div>
     <?php } ?>
 </body>
