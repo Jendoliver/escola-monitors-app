@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php
+    require_once "bbdd_lib.php";
     if(!auth())
         errorNotLogged();
     else
@@ -23,7 +24,6 @@
         </div>
         <div class="row"> <!-- Tabla según de donde se venga -->
             <?php
-            require_once "bbdd_lib.php";
             
             if(isset($_POST["codi_curs"])) // VENIMOS DE buscarcurso.php CON CÓDIGO DE CURSO
             { ?>
