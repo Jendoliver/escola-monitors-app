@@ -40,12 +40,65 @@
     		                <div class="modal-body">
     		                    <div id="mod_curs">
                                     <div id="mod_curs-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                    <span id="mod_curs-msg">Informació de curs:</span>
+                                    <span id="mod_curs-msg">Informació de curs (introdueix el codi o el nom del curs):</span>
                                 </div>
-    				    		<input class="form-control" type="number" min="1" name="codi_curs" placeholder="Codi de curs" required><br>
-    				    		<div id="mod_curs">
-                                    <div id="mod_curs-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                    <span id="mod_curs-msg">Dades personals:</span>
+    				    		<input class="form-control" type="number" min="1" name="codi_curs" placeholder="Codi de curs"><br>
+    				    		<select class="form-control" name="codi_curs">
+    				    		    <option value="NONE" default>Tria el nom del curs...</option>
+    				    		    <?php // PARCHAKO
+    				    		    $con = conectar("escoladeb1735408");
+    				    		    $query = "SELECT id_curso, tipo_curso, modalidad, fecha_ini FROM Curso;";
+    				    		    if($res = mysqli_query($con, $query))
+    				    		    {
+    				    		        if($row = mysqli_fetch_assoc($res))
+    				    		        {
+    				    		            do
+    				    		            {
+    				    		                $option = "Curs ";
+        				    		            $i = 0;
+        				    		            foreach($row as $key => $value)
+        				    		            {
+        				    		                if($i == 0)
+        				    		                {
+        				    		                    $idcurso = $value;
+        				    		                }
+        				    		                else if($i == 1)
+        				    		                {
+        				    		                    switch($value)
+        				    		                    {
+        				    		                        case 0: $option .= "Monitor"; break;
+        				    		                        case 1: $option .= "Director"; break;
+        				    		                        case 2: $option .= "Premonitor"; break;
+        				    		                        case 3: $option .= "Altres"; break;
+        				    		                        default: echo "ERRORAKO I=1";
+        				    		                    }
+        				    		                }
+        				    		                else if($i == 2)
+        				    		                {
+        				    		                    switch($value)
+        				    		                    {
+        				    		                        case 0: $option .= " Matí "; break;
+        				    		                        case 1: $option .= " Tarda "; break;
+        				    		                        case 2: $option .= " Cap de setmana "; break;
+        				    		                        case 3: $option .= " Intensiu "; break;
+        				    		                        default: echo "ERRORAKO I=2";
+        				    		                    }
+        				    		                }
+        				    		                else if($i == 3)
+        				    		                {
+        				    		                    $option .= $value;
+        				    		                }
+        				    		                $i++;
+        				    		            }
+        				    		            echo "<option value='$idcurso'>$option</option>";
+    				    		            } while ($row = mysqli_fetch_assoc($res));
+    				    		        }
+    				    		    }
+    				    		    ?> <!-- PARCHAKO FIN -->
+    				    		</select><br>
+    				    		<div id="dadespersonals">
+                                    <div id="dadespersonals-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                    <span id="dadespersonals-msg">Dades personals:</span>
                                 </div>
     				    		<input class="form-control" type="text" name="dni_alumne" maxlength="9" placeholder="DNI de l'alumne" required>
     				    		<input class="form-control" type="text" maxlength="30" name="nom" placeholder="Nom" required>
@@ -54,9 +107,9 @@
     				    		<input class="form-control" type="text" maxlength="100" name="direccio" placeholder="Direcció">
     				    		<input class="form-control" type="text" minlength="9" maxlength="15" name="telefon" placeholder="Telèfon">
     				    		<input class="form-control" type="email" maxlength="100" name="email_alumne" placeholder="Email"><br>
-    				    		<div id="mod_curs">
-                                    <div id="mod_curs-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                    <span id="mod_curs-msg">Data de naixement:</span>
+    				    		<div id="datanaixement">
+                                    <div id="datanaixement-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                    <span id="datanaixement-msg">Data de naixement:</span>
                                 </div>
                                 <input class="form-control" type="date" name="data_naixement">
                             </div>

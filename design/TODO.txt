@@ -8,4 +8,4 @@ DONE - En el listado que te genera cuando haces Buscar un curso mira si puedes p
 NO ES NECESARIO, pica el puto boton de cualquiera imbécil - El módulo Cercar diversos cursos (de Cercar Cursos) no funciona, haz una búsqueda de cursos de Tarde y no te sale ninguno. 
 DONE - Mira si puedes poner en el cercador una búsqueda por años 
 PIJADA A COBRAR (habrá que hacer una consulta un poco fina) - Que el buscador de cursos te genere una tabla directamente con los cursos realizados en el año con los siguientes campos y le añades: Nº de alumnes(OK) , Import Total , Import Cobrat , Import Pendent (en Codi de Curs se ha de cambiar por el nombre del curso --> NO) 
-PIJADA A COBRAR (esto es otro módulo del que no se había hablado) - Y pones un cuarto botón de Informes que te permita crear informes filtrando cualquier campo. (Por ejemplo: sacar un listado de los alumnos con deudas pendiese del año 2015)
+PIJADA A COBRAR (esto es otro módulo del que no se había hablado) - Y pones un cuarto botón de Informes (en la homepage) que te permita crear informes filtrando cualquier campo. (Por ejemplo: sacar un listado de los alumnos con deudas pendiese del año 2015)
