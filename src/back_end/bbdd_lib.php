@@ -25,7 +25,7 @@ function desconectar($con) // Otra que tal
 //AUTENTICACIÓN
 function checkadmin($user, $pass) // Función que comprueba que el login es correcto
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $query = "SELECT * FROM Admin WHERE username = '$user' AND password = '$pass';";
     if($res = mysqli_query($con, $query)) // si no hay error
     {
@@ -60,7 +60,7 @@ function auth() // Función que comprueba que se accede a la web logueado como a
 function insertarCurso($tipo, $mod, $fecha_ini, $fecha_fin, $lugar, $precio) // FUNCIÓN QUE INSERTA UN CURSO EN LA TABLA CURSO, DEVUELVE CÓDIGO DE CURSO (PRIMARY KEY) Ó 0 EN CASO DE ERROR
 {
     $code = createCode();
-    $conexion = conectar("edm");
+    $conexion = conectar("escoladeb1735408");
     $insert = "INSERT INTO Curso(`id_curso`, `tipo_curso`, `modalidad`, `fecha_ini`, `fecha_fin`, `lugar`, `precio`) VALUES($code, $tipo, $mod, '$fecha_ini', '$fecha_fin', '$lugar', $precio);";
     if(mysqli_query($conexion, $insert))
     {
@@ -79,7 +79,7 @@ function insertarAlumno($codigo, $dni, $nom, $ape1, $ape2, $nacim, $dir, $tel, $
 {
     if(!alumnoExists($dni)) // el alumno es nuevo
     {
-        $conexion = conectar("edm");
+        $conexion = conectar("escoladeb1735408");
         $insert = "INSERT INTO Alumno(`dni`,`nombre`,`ape1`,`ape2`,`fecha_nacimiento`,`direccion`,`telefono`,`email`) VALUES('$dni', '$nom', '$ape1', '$ape2', '$nacim', '$dir', '$tel', '$email');";
         if(mysqli_query($conexion, $insert))
         {
@@ -103,7 +103,7 @@ function insertarAlumno($codigo, $dni, $nom, $ape1, $ape2, $nacim, $dir, $tel, $
     }
     else if(!alumnoIsInCurso($dni, $codigo)) // el alumno ya existe pero no en ese curso
     {
-        $conexion = conectar("edm");
+        $conexion = conectar("escoladeb1735408");
         $insert = "INSERT INTO Inscrito VALUES('$dni', $codigo);";
         if(mysqli_query($conexion, $insert))
         {
@@ -125,7 +125,7 @@ function insertarAlumno($codigo, $dni, $nom, $ape1, $ape2, $nacim, $dir, $tel, $
 //SELECTS
 function createCode() // FUNCIÓN QUE DEVUELVE UN CÓDIGO DE CURSO NUEVO
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $query = "SELECT id_curso FROM Curso;"; // pillamos todos los codigos
     if($res = mysqli_query($con, $query)) // si no hay error
     {
@@ -143,7 +143,7 @@ function createCode() // FUNCIÓN QUE DEVUELVE UN CÓDIGO DE CURSO NUEVO
 //UPDATES
 function updateCurso($code, $tipo, $mod, $fecha_ini, $fecha_fin, $lugar, $precio)
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $update = "UPDATE Curso SET tipo_curso = $tipo, modalidad = $mod, fecha_ini = '$fecha_ini', fecha_fin = '$fecha_fin', lugar = '$lugar', precio = $precio WHERE id_curso = $code;";
     if(mysqli_query($con, $update))
     {
@@ -159,7 +159,7 @@ function updateCurso($code, $tipo, $mod, $fecha_ini, $fecha_fin, $lugar, $precio
 
 function updateAlumnoPersonal($dni, $nom, $cog1, $cog2, $dnaix, $dir, $tel, $email)
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $update = "UPDATE Alumno SET nombre = '$nom', ape1 = '$cog1', ape2 = '$cog2', fecha_nacimiento = '$dnaix', direccion = '$dir', telefono = '$tel', email = '$email' WHERE dni = '$dni';";
     if(mysqli_query($con, $update))
     {
@@ -175,7 +175,7 @@ function updateAlumnoPersonal($dni, $nom, $cog1, $cog2, $dnaix, $dir, $tel, $ema
 
 function updateAlumnoExpedient($dni, $teorica, $practica, $convocatoria, $memoria, $aprovat, $numtitol)
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $update = "UPDATE Alumno SET calificacion_teoria = $teorica, calificacion_practicas = $practica, fecha_memoria = '$convocatoria', memoria = $memoria, aprobado = $aprovat, num_titulo = $numtitol WHERE dni = '$dni';";
     if(mysqli_query($con, $update))
     {
@@ -192,7 +192,7 @@ function updateAlumnoExpedient($dni, $teorica, $practica, $convocatoria, $memori
 
 function updateAlumnoDeutas($dni, $money)
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $update = "UPDATE Alumno SET dinero_debido = $money WHERE dni = '$dni';";
     if(mysqli_query($con, $update))
     {
@@ -209,7 +209,7 @@ function updateAlumnoDeutas($dni, $money)
 //BOOLEANAS
 function cursoExists($code) // FUNCIÓN QUE DEVUELVE 1 SI EL CURSO EXISTE Y 0 SI NO
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $query = "SELECT id_curso FROM Curso WHERE id_curso = $code;";
     if($res = mysqli_query($con, $query)) // si la monarquia española ataca aka si no hay error
     {
@@ -233,7 +233,7 @@ function cursoExists($code) // FUNCIÓN QUE DEVUELVE 1 SI EL CURSO EXISTE Y 0 SI
 
 function alumnoExists($dni)
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $query = "SELECT dni FROM Alumno WHERE dni = '$dni';";
     if($res = mysqli_query($con, $query)) // si la monarquia española ataca aka si no hay error
     {
@@ -257,7 +257,7 @@ function alumnoExists($dni)
 
 function alumnoIsInCurso($dni, $code)
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $query = "SELECT * FROM Inscrito WHERE dni = '$dni' AND id_curso = $code;";
     if($res = mysqli_query($con, $query)) // si la monarquia española ataca aka si no hay error
     {
@@ -284,7 +284,7 @@ function alumnoIsInCurso($dni, $code)
 //SELECTS
 function showCursoByCode($code) // PROCEDIMIENTO QUE MUESTRA UN SOLO CURSO CON id_curso = $code Y OPCIONES DE GESTIÓN (mostrar alumnos del curso, modificar curso //NUNCA EL CÓDIGO//)
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     if($res = mysqli_query($con, "SELECT id_curso as 'Codi de curs', tipo_curso as 'Tipus de curs', modalidad as 'Modalitat', fecha_ini as 'Data Inici', fecha_fin as 'Data Final', lugar as 'Lloc', precio as 'Preu' FROM Curso WHERE id_curso = $code;"))
     {
         createTableCursos($con, $res);
@@ -301,9 +301,12 @@ function showCursoByCode($code) // PROCEDIMIENTO QUE MUESTRA UN SOLO CURSO CON i
     }
 }
 
-function showCursos($tipo, $mod, $date) // PROCEDIMIENTO QUE MUESTRA UNO O VARIOS CURSOS SEGÚN EL TIPO, MODALIDAD Y AÑO ESPECIFICADO
+function showCursos($tipo, $mod, $ano) // PROCEDIMIENTO QUE MUESTRA UNO O VARIOS CURSOS SEGÚN EL TIPO, MODALIDAD Y AÑO ESPECIFICADO
 {
     $where = " WHERE "; // MONTAMOS LA PARTE WHERE DE LA CONSULTA
+    $anofin = intval($ano) + 1;
+    $dateini = $ano."-01-01";
+    $datefin = $anofin."-01-01";
     $restric = false;
     if($tipo != "ANY")
     {
@@ -320,13 +323,13 @@ function showCursos($tipo, $mod, $date) // PROCEDIMIENTO QUE MUESTRA UNO O VARIO
             $restric = true;
         }
     }
-    if($date != "ANY")
+    if($ano != "ANY")
     {
         if($restric)
-            $where .= " AND fecha_ini = '$date'";
+            $where .= " AND fecha_ini BETWEEN '$dateini' and '$datefin'";
         else
         {
-            $where .= "fecha_ini = '$date'";
+            $where .= "fecha_ini BETWEEN '$dateini' and '$datefin'";
             $restric = true;
         }
     }
@@ -335,7 +338,7 @@ function showCursos($tipo, $mod, $date) // PROCEDIMIENTO QUE MUESTRA UNO O VARIO
     if($restric)
         $query .= $where;
     
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     if($res = mysqli_query($con, $query))
     {
         createTableCursos($con, $res);
@@ -386,7 +389,7 @@ function showAlumnoByNom($nom, $cog1, $cog2) // TODO
     if($restric)
         $select .= $where;
         
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     if($res = mysqli_query($con, $select))
     {
         createTableAlumnos($con, $res);
@@ -405,7 +408,7 @@ function showAlumnoByNom($nom, $cog1, $cog2) // TODO
 
 function showAlumnoByEmail($email)
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teòrica', calificacion_practicas as 'Qualif. part pràctica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatòria', memoria as 'Memòria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de títol' FROM Alumno WHERE email = '$email';";
     if($res = mysqli_query($con, $select))
     {
@@ -425,7 +428,7 @@ function showAlumnoByEmail($email)
 
 function showAlumnoByDNI($dni)
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teòrica', calificacion_practicas as 'Qualif. part pràctica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatòria', memoria as 'Memòria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de títol' FROM Alumno WHERE dni = '$dni';";
     if($res = mysqli_query($con, $select))
     {
@@ -445,7 +448,7 @@ function showAlumnoByDNI($dni)
 
 function showAlumnoByTel($tel)
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teòrica', calificacion_practicas as 'Qualif. part pràctica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatòria', memoria as 'Memòria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de títol' FROM Alumno WHERE telefono = '$tel';";
     if($res = mysqli_query($con, $select))
     {
@@ -465,7 +468,7 @@ function showAlumnoByTel($tel)
 
 function showAlumnosCurso($code)
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $select = "SELECT Alumno.dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teòrica', calificacion_practicas as 'Qualif. part pràctica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatòria', memoria as 'Memòria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de títol' FROM Alumno INNER JOIN Inscrito ON Alumno.dni = Inscrito.dni WHERE Inscrito.id_curso = $code";
     if($res = mysqli_query($con, $select))
     {
@@ -486,7 +489,7 @@ function showAlumnosCurso($code)
 
 function showMorosos()
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', direccion as 'Direcció', telefono as 'Telèfon', email, dinero_debido as 'Deutes en €' FROM Alumno WHERE dinero_debido != 0;";
     if($res = mysqli_query($con, $select))
     {
@@ -506,7 +509,7 @@ function showMorosos()
 
 function showAprobados()
 {
-    $con = conectar("edm");
+    $con = conectar("escoladeb1735408");
     $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', fecha_nacimiento as 'Data de naixement', direccion as 'Direcció', telefono as 'Telèfon', email, calificacion_teoria as 'Qualif. part teòrica', calificacion_practicas as 'Qualif. part pràctica', dinero_debido as 'Deutes en €', fecha_memoria as 'Data de convocatòria', memoria as 'Memòria entregada', aprobado as 'Qualif. alumne', num_titulo as 'Numero de títol' FROM Alumno WHERE aprobado = 2;";
     if($res = mysqli_query($con, $select))
     {

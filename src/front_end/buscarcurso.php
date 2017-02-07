@@ -80,9 +80,9 @@
             		    		<label class="radio-inline"><input type="radio" name="modalitat_curs" value="ANY" checked required>Qualsevol</label><br><br>
             		    		<div id="date">
                                     <div id="date-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                    <span id="date-msg">Data d'inici del curs:</span>
+                                    <span id="date-msg">Any del curs:</span>
                                 </div>
-                                <input class="form-control" type="date" name="data_curs">
+                                <input class="form-control" type="number" name="data_curs" minlength="4" maxlength="4">
                                 <input type="radio" name="data_curs" value="ANY"> Qualsevol
                             </div>
                             <div class="modal-footer">

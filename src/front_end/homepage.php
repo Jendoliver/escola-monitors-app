@@ -41,7 +41,7 @@
         <div class="row"><br><br></div>
         <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="panel panel-default"> <!-- Gestionar alumnes -->
                     <div class="panel-heading"><h3>Gestió d'alumnes</h3></div>
                     <div class="main-container panel-body">
@@ -59,8 +59,25 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-4">
+            <div class="col-md-3">
+                <div class="panel panel-default"> <!-- Donar d'alta alumne a curs -->
+                    <div class="panel-heading"><h3>Donar d'alta alumnes</h3></div>
+                    <div class="main-container panel-body">
+		                <div class="modal-body">
+		                    <blockquote>
+                                <p>Des d'aquí es donen d'alta els alumnes i s'inscriuen directament a un curs prèviament creat a la secció de l'esquerra <em>(mitjançant el codi de curs).</em> Necessitaràs el seu DNI, nom i cognoms, data de naixement, direcció i email.</p>
+                                <footer><em>Un cop hagis creat un curs, dóna-hi d'alta alumnes</em></footer>
+                            </blockquote>
+        		    	</div>
+				        <div class="modal-footer">
+                            <div>
+                                <a href="alta_alumno.php" class="btn btn-primary btn-lg btn-block">Inscriure alumne a curs</a>
+                            </div>
+				        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
                 <div class="panel panel-default"> <!-- Gestionar cursos -->
                     <div class="panel-heading"><h3>Gestió de cursos</h3></div>
                     <div class="main-container panel-body">
