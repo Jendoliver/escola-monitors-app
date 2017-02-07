@@ -527,12 +527,23 @@ function showAprobados()
     }
 }
 
+function countAlumnosCurso($code) // devuelve el número de alumnos en el curso de id $code
+{
+    $con = conectar("escoladeb1735408");
+    $select = "SELECT * FROM Inscrito WHERE id_curso = $code";
+    if($res = mysqli_query($con, $select))
+        return mysqli_num_rows($res);
+    else
+        errorConsulta();
+}
+
 function createTableCursos($con, $res) // $con = conexion bbdd, $res = resultado query
 {
     if($row = mysqli_fetch_assoc($res)) //comprobamos que hay algo para evitar warning
     {
         $table = "<table class='table table-hover'>"; // ese bootstrap joder
         $table .= "<thead>";
+        $table .= "<th>Num alumnes</th>";
         foreach($row as $key => $value) // header tabla
         {
             $table .= "<th>$key</th>";
@@ -548,6 +559,8 @@ function createTableCursos($con, $res) // $con = conexion bbdd, $res = resultado
                 if($i == 0) // pillamos la primary para lanzar el modify sobre eso
                 {    
                     $idcurso = $value;
+                    $numalumnos = countAlumnosCurso($idcurso);
+                    $table .= "<td>$numalumnos</td>";
                     $table .= "<td>$value</td>";
                 }
                 else if($i == 1)

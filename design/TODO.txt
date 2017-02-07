@@ -4,5 +4,5 @@ En el formulario de inserción de cursos el primer campo tiene que ser el nombre
 NO ES NECESARIO - En la página Gestió de Cursos le falta un botón de “Tornar entere” y que te lleve a la home porque se queda colgada
 DONE (cambiando el SELECT) - En el formulario de Crear un nou curs falta un campo con el nombre “Any” para después hacer búsquedas de cursos por años
 DONE (no nombre, código) - En el listado de Morosos que aparezca el Nombre del Curso
-En el listado que te genera cuando haces Buscar un curso mira si puedes poner un contador del nº de alumnos. 
+DONE - En el listado que te genera cuando haces Buscar un curso mira si puedes poner un contador del nº de alumnos. 
 NO ES NECESARIO - El módulo Cercar diversos cursos (de Cercar Cursos) no funciona, haz una búsqueda de cursos de Tarde y no te sale ninguno. Mira si puedes poner en el cercador una búsqueda por años y que te genere una tabla directamente con los cursos realizados en el año con los siguientes campos y le añades: Nº de alumnes , Import Total , Import Cobrat , Import Pendent (en Codi de Curs se ha de cambiar por el nombre del curso) 
