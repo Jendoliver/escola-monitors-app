@@ -490,10 +490,10 @@ function showAlumnosCurso($code)
 function showMorosos()
 {
     $con = conectar("escoladeb1735408");
-    $select = "SELECT dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', direccion as 'Direcció', telefono as 'Telèfon', email, dinero_debido as 'Deutes en €' FROM Alumno WHERE dinero_debido != 0;";
+    $select = "SELECT Alumno.dni as 'DNI', nombre as 'Nom', ape1 as 'Primer Cognom', ape2 as 'Segon Cognom', direccion as 'Direcció', telefono as 'Telèfon', email, dinero_debido as 'Deutes en €', id_curso as 'Codi de curs' FROM Alumno INNER JOIN Inscrito on Alumno.dni = Inscrito.dni WHERE dinero_debido != 0;";
     if($res = mysqli_query($con, $select))
     {
-        createTableAlumnos($con, $res);
+        createTableMorosos($con, $res);
         desconectar($con);
         printBackButton();
         printHomeButton();
@@ -652,6 +652,44 @@ function createTableAlumnos($con, $res)
                         $table .= "<td>$value</td>";
                     else
                         $table .= "<td>Sense títol</td>";
+                }
+                else
+                    $table .= "<td>$value</td>";
+                $i++;
+            }
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' class='btn btn-info btn-sm' name='personal' value='MODIFICAR'></form></td>";
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' class='btn btn-info btn-sm' name='expedient' value='MODIFICAR'></form></td>";// botón de modificar
+            $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='dni' value='$dni'><input type='submit' class='btn btn-info btn-sm' name='deutes' value='MODIFICAR'></form></td>";
+            $table .= "</tr>";
+        } while ($row = mysqli_fetch_assoc($res));
+        $table .= "</tbody></table>";
+        echo $table;
+    }
+    else
+        errorNoResults();
+}
+
+function createTableMorosos($con, $res) // parche 1.1
+{
+    if($row = mysqli_fetch_assoc($res)) // checkiamos que hay resultados
+    {
+        $table = "<table class='table table-hover'>";
+        $table .= "<thead>";
+        foreach($row as $key => $value) // header tabla
+        {
+            $table .= "<th>$key</th>";
+        }
+        $table .= "<th>Modificar dades personals</th><th>Modificar expedient</th><th>Modificar deutes</th></thead><tbody>"; // columna de botón modificar, cierre del header y apertura del body
+        do // llenar tabla con el contenido de la query
+        {
+            $i = 0;
+            $table .= "<tr>"; // principio de fila
+            foreach($row as $key => $value) // llenamos una fila
+            {
+                if($i == 0) // pillamos la primary para lanzar el modify sobre eso
+                {
+                    $dni = $value;
+                    $table .= "<td>$value</td>";
                 }
                 else
                     $table .= "<td>$value</td>";
