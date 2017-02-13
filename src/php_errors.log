@@ -1,3 +1,253 @@
 [31-Jan-2017 15:52:25 UTC] PHP Fatal error:  Call to undefined function auth() in /home/ubuntu/workspace/src/back_end/selector.php on line 12
 [31-Jan-2017 15:52:25 UTC] PHP Stack trace:
 [31-Jan-2017 15:52:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:21:55 UTC] PHP Fatal error:  Call to undefined function deconectar() in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 536
+[10-Feb-2017 19:21:55 UTC] PHP Stack trace:
+[10-Feb-2017 19:21:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:21:55 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:21:55 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:21:55 UTC] PHP   4. countAlumnosCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:614
+[10-Feb-2017 19:22:27 UTC] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 553
+[10-Feb-2017 19:22:27 UTC] PHP Stack trace:
+[10-Feb-2017 19:22:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:22:27 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:22:27 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:22:27 UTC] PHP   4. getImporteTotalCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:644
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589
+[10-Feb-2017 19:23:11 UTC] PHP Warning:  Missing argument 1 for getImportePendienteCurso(), called in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 589 and defined in /home/ubuntu/workspace/src/back_end/bbdd_lib.php on line 565
+[10-Feb-2017 19:23:11 UTC] PHP Stack trace:
+[10-Feb-2017 19:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/src/back_end/selector.php:0
+[10-Feb-2017 19:23:11 UTC] PHP   2. showCursos() /home/ubuntu/workspace/src/back_end/selector.php:55
+[10-Feb-2017 19:23:11 UTC] PHP   3. createTableCursos() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:344
+[10-Feb-2017 19:23:11 UTC] PHP   4. getImportePagadoCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:645
+[10-Feb-2017 19:23:11 UTC] PHP   5. getImportePendienteCurso() /home/ubuntu/workspace/src/back_end/bbdd_lib.php:589

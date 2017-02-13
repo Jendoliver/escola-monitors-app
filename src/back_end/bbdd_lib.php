@@ -80,7 +80,8 @@ function insertarAlumno($codigo, $dni, $nom, $ape1, $ape2, $nacim, $dir, $tel, $
     if(!alumnoExists($dni)) // el alumno es nuevo
     {
         $conexion = conectar("escoladeb1735408");
-        $insert = "INSERT INTO Alumno(`dni`,`nombre`,`ape1`,`ape2`,`fecha_nacimiento`,`direccion`,`telefono`,`email`) VALUES('$dni', '$nom', '$ape1', '$ape2', '$nacim', '$dir', '$tel', '$email');";
+        $precio = getPrecioCurso($codigo);
+        $insert = "INSERT INTO Alumno(`dni`,`nombre`,`ape1`,`ape2`,`fecha_nacimiento`,`direccion`,`telefono`,`email`,`dinero_debido`) VALUES('$dni', '$nom', '$ape1', '$ape2', '$nacim', '$dir', '$tel', '$email', $precio);";
         if(mysqli_query($conexion, $insert))
         {
             $insert = "INSERT INTO Inscrito VALUES('$dni', $codigo);";
@@ -532,9 +533,80 @@ function countAlumnosCurso($code) // devuelve el número de alumnos en el curso 
     $con = conectar("escoladeb1735408");
     $select = "SELECT * FROM Inscrito WHERE id_curso = $code";
     if($res = mysqli_query($con, $select))
+    {
+        desconectar($con);
         return mysqli_num_rows($res);
+    }
     else
+    {
+        desconectar($con);
         errorConsulta();
+    }
+}
+
+//FUNCIONES DE PRECIOS
+function getPrecioCurso($code) // devuelve el precio de un curso
+{
+    $con = conectar("escoladeb1735408");
+    $select = "SELECT precio FROM Curso WHERE id_curso = $code";
+    if($res = mysqli_query($con, $select))
+    {
+        $row = mysqli_fetch_assoc($res);
+        $precio = intval($row["precio"]);
+        desconectar($con);
+        return $precio;
+    }
+    else
+    {
+        desconectar($con);
+        errorConsulta();
+    }
+}
+
+function getImporteTotalCurso($code) // devuelve la pasta total que se ingresará en un curso (precio curso * numero de alumnos)
+{
+    $con = conectar("escoladeb1735408");
+    $select = "SELECT precio FROM Curso WHERE id_curso = $code";
+    if($res = mysqli_query($con, $select))
+    {
+        $row = mysqli_fetch_assoc($res);
+        $precio = intval($row["precio"]);
+        desconectar($con);
+        $numalumnos = countAlumnosCurso($code);
+        return $precio*$numalumnos;
+    }
+    else
+    {
+        desconectar($con);
+        errorConsulta();
+    }
+}
+
+function getImportePendienteCurso($code) // devuelve la pasta que falta por cobrar en un curso (suma de las deutas de todos los alumnos que pertenecen al curso)
+{
+    $con = conectar("escoladeb1735408");
+    $select = "SELECT dinero_debido FROM Alumno INNER JOIN Inscrito ON Alumno.dni = Inscrito.dni WHERE id_curso = $code";
+    if($res = mysqli_query($con, $select))
+    {
+        $total = 0;
+        $row = mysqli_fetch_assoc($res);
+        do
+        {
+            $total += intval($row["dinero_debido"]);
+        } while($row = mysqli_fetch_assoc($res));
+        desconectar($con);
+        return $total;
+    }
+    else
+    {
+        desconectar($con);
+        errorConsulta();
+    }
+}
+
+function getImportePagadoCurso($code) // devuelve la pasta ya pagada en un curso
+{
+    return (getImporteTotalCurso($code) - getImportePendienteCurso($code));
 }
 
 function createTableCursos($con, $res) // $con = conexion bbdd, $res = resultado query
@@ -548,7 +620,7 @@ function createTableCursos($con, $res) // $con = conexion bbdd, $res = resultado
         {
             $table .= "<th>$key</th>";
         }
-        $table .= "<th>Modificar curs</th><th>Visualitzar alumnes</th></thead><tbody>"; // columna de botón modificar, cierre del header y apertura del body
+        $table .= "<th>Import Total</th><th>Import Cobrat</th><th>Import Pendent</th><th>Modificar curs</th><th>Visualitzar alumnes</th></thead><tbody>"; // columna de botón modificar, cierre del header y apertura del body
     
         do // llenar tabla con el contenido de la query
         {
@@ -589,6 +661,12 @@ function createTableCursos($con, $res) // $con = conexion bbdd, $res = resultado
                     $table .= "<td>$value</td>";
                 $i++;
             }
+            $import_total = getImporteTotalCurso($idcurso);
+            $import_cobrat = getImportePagadoCurso($idcurso);
+            $import_pendent = getImportePendienteCurso($idcurso);
+            $table .= "<td>$import_total €</td>";
+            $table .= "<td>$import_cobrat €</td>";
+            $table .= "<td>$import_pendent €</td>";
             $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='idcurso' value='$idcurso'><input type='submit' class='btn btn-info btn-sm' name='curso' value='MODIFICAR'></form></td>"; // botón de modificar
             $table .= "<td><form action='../front_end/modificardatos.php' method='POST'><input type='hidden' name='idcurso' value='$idcurso'><input type='submit' class='btn btn-info btn-sm' name='alumnos' value='MOSTRAR'></form></td>";
             $table .= "</tr>";

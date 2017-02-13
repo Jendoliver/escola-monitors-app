@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Alta alumne</title>
     <script src="../js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -40,9 +41,8 @@
     		                <div class="modal-body">
     		                    <div id="mod_curs">
                                     <div id="mod_curs-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                    <span id="mod_curs-msg">Informació de curs (introdueix el codi o el nom del curs):</span>
+                                    <span id="mod_curs-msg">Nom del curs:</span>
                                 </div>
-    				    		<input class="form-control" type="number" min="1" name="codi_curs" placeholder="Codi de curs"><br>
     				    		<select class="form-control" name="codi_curs">
     				    		    <option value="NONE" default>Tria el nom del curs...</option>
     				    		    <?php // PARCHAKO
